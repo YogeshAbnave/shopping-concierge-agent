@@ -1,0 +1,2442 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "WishlistTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "Wishlist-",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     },
+     {
+      "attributeName": "user_id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "globalSecondaryIndexes": [
+     {
+      "indexName": "wishlistsByUser_id",
+      "keySchema": [
+       {
+        "attributeName": "user_id",
+        "keyType": "HASH"
+       }
+      ],
+      "projection": {
+       "projectionType": "ALL"
+      },
+      "provisionedThroughput": {
+       "Fn::If": [
+        "ShouldUsePayPerRequestBilling",
+        {
+         "Ref": "AWS::NoValue"
+        },
+        {
+         "ReadCapacityUnits": {
+          "Ref": "DynamoDBModelTableReadIOPS"
+         },
+         "WriteCapacityUnits": {
+          "Ref": "DynamoDBModelTableWriteIOPS"
+         }
+        }
+       ]
+      }
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistTable/Default/Default"
+   }
+  },
+  "WishlistIAMRole130B259C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Wishlist-",
+                {
+                 "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Wishlist-",
+                {
+                 "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "WishlistIAMRole56acee-",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistIAMRole/Resource"
+   }
+  },
+  "WishlistDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "WishlistTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "WishlistTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "WishlistIAMRole130B259C",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "WishlistIAMRole130B259C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistDataSource/Resource"
+   }
+  },
+  "QuerygetWishlistpreAuth0FunctionQuerygetWishlistpreAuth0FunctionAppSyncFunction565BA2D1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetWishlistpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistpreAuth0Function/QuerygetWishlistpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction3117C795": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistauth0Function/QuerygetWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunctionD9E02186": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistpostAuth0Function/QuerygetWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetWishlistDataResolverFnQueryGetWishlistDataResolverFnAppSyncFunction39B8737B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryGetWishlistDataResolverFn/QueryGetWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "getWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetWishlistpreAuth0FunctionQuerygetWishlistpreAuth0FunctionAppSyncFunction565BA2D1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction3117C795",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunctionD9E02186",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetWishlistDataResolverFnQueryGetWishlistDataResolverFnAppSyncFunction39B8737B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryGetWishlistResolver"
+   }
+  },
+  "QuerylistWishlistspreAuth0FunctionQuerylistWishlistspreAuth0FunctionAppSyncFunctionB4190484": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistWishlistspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistspreAuth0Function/QuerylistWishlistspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistWishlistsauth0FunctionQuerylistWishlistsauth0FunctionAppSyncFunction09103281": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistWishlistsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistsauth0Function/QuerylistWishlistsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistWishlistspostAuth0FunctionQuerylistWishlistspostAuth0FunctionAppSyncFunction599B6561": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistWishlistspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistspostAuth0Function/QuerylistWishlistspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListWishlistsDataResolverFnQueryListWishlistsDataResolverFnAppSyncFunction07C98D3D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListWishlistsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryListWishlistsDataResolverFn/QueryListWishlistsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "listWishlists",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistWishlistspreAuth0FunctionQuerylistWishlistspreAuth0FunctionAppSyncFunctionB4190484",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistWishlistsauth0FunctionQuerylistWishlistsauth0FunctionAppSyncFunction09103281",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistWishlistspostAuth0FunctionQuerylistWishlistspostAuth0FunctionAppSyncFunction599B6561",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListWishlistsDataResolverFnQueryListWishlistsDataResolverFnAppSyncFunction07C98D3D",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listWishlists\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryListWishlistsResolver"
+   }
+  },
+  "MutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunctionA6C0713C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateWishlistinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistinit0Function/MutationcreateWishlistinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateWishlistpreAuth0FunctionMutationcreateWishlistpreAuth0FunctionAppSyncFunction6F9F2674": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateWishlistpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistpreAuth0Function/MutationcreateWishlistpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunctionD46038EE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b371d68ddfbdd11b176756ce33b2c4e79d26fcc2fd4b7c0c9e75d06efacee90e.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistauth0Function/MutationcreateWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateWishlistpostAuth0FunctionMutationcreateWishlistpostAuth0FunctionAppSyncFunction362780A8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistpostAuth0Function/MutationcreateWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateWishlistDataResolverFnMutationCreateWishlistDataResolverFnAppSyncFunctionE37280C5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a726dcac59e02ff9c4bf639455676d4dc87a4aaacc8ac1a13b424e4fc3fd58d9.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationCreateWishlistDataResolverFn/MutationCreateWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "createWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunctionA6C0713C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateWishlistpreAuth0FunctionMutationcreateWishlistpreAuth0FunctionAppSyncFunction6F9F2674",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunctionD46038EE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateWishlistpostAuth0FunctionMutationcreateWishlistpostAuth0FunctionAppSyncFunction362780A8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateWishlistDataResolverFnMutationCreateWishlistDataResolverFnAppSyncFunctionE37280C5",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationCreateWishlistResolver"
+   }
+  },
+  "MutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction41FAE5A6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateWishlistinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistinit0Function/MutationupdateWishlistinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateWishlistpreAuth0FunctionMutationupdateWishlistpreAuth0FunctionAppSyncFunction95DA8359": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateWishlistpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistpreAuth0Function/MutationupdateWishlistpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateWishlistauth0FunctionMutationupdateWishlistauth0FunctionAppSyncFunction4AFB8D17": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/245ed8ac5185462a6923b7e45a318fec4c9ba0c45d1d720abd5b20317aa3dc6a.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistauth0Function/MutationupdateWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateWishlistpostAuth0FunctionMutationupdateWishlistpostAuth0FunctionAppSyncFunction534E11F1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistpostAuth0Function/MutationupdateWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateWishlistDataResolverFnMutationUpdateWishlistDataResolverFnAppSyncFunction819A7F87": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationUpdateWishlistDataResolverFn/MutationUpdateWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "updateWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction41FAE5A6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateWishlistpreAuth0FunctionMutationupdateWishlistpreAuth0FunctionAppSyncFunction95DA8359",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateWishlistauth0FunctionMutationupdateWishlistauth0FunctionAppSyncFunction4AFB8D17",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateWishlistpostAuth0FunctionMutationupdateWishlistpostAuth0FunctionAppSyncFunction534E11F1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateWishlistDataResolverFnMutationUpdateWishlistDataResolverFnAppSyncFunction819A7F87",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationUpdateWishlistResolver"
+   }
+  },
+  "MutationdeleteWishlistpreAuth0FunctionMutationdeleteWishlistpreAuth0FunctionAppSyncFunction89E0F5CC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteWishlistpreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistpreAuth0Function/MutationdeleteWishlistpreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteWishlistauth0FunctionMutationdeleteWishlistauth0FunctionAppSyncFunctionEDDD4D26": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/29e4bdb03133f87f2b1acb547959ffd4cfd22804026994c5b61db33084127353.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistauth0Function/MutationdeleteWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteWishlistpostAuth0FunctionMutationdeleteWishlistpostAuth0FunctionAppSyncFunctionB7D7BD30": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistpostAuth0Function/MutationdeleteWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteWishlistDataResolverFnMutationDeleteWishlistDataResolverFnAppSyncFunction61483E48": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationDeleteWishlistDataResolverFn/MutationDeleteWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "deleteWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteWishlistpreAuth0FunctionMutationdeleteWishlistpreAuth0FunctionAppSyncFunction89E0F5CC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteWishlistauth0FunctionMutationdeleteWishlistauth0FunctionAppSyncFunctionEDDD4D26",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteWishlistpostAuth0FunctionMutationdeleteWishlistpostAuth0FunctionAppSyncFunctionB7D7BD30",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteWishlistDataResolverFnMutationDeleteWishlistDataResolverFnAppSyncFunction61483E48",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationDeleteWishlistResolver"
+   }
+  },
+  "SubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunctionDAA07BE1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononCreateWishlistauth0Function/SubscriptiononCreateWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateWishlistpostAuth0FunctionSubscriptiononCreateWishlistpostAuth0FunctionAppSyncFunctionF3FF47EC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononCreateWishlistpostAuth0Function/SubscriptiononCreateWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionEE16B87D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnCreateWishlistDataResolverFn/SubscriptionOnCreateWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onCreateWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunctionDAA07BE1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateWishlistpostAuth0FunctionSubscriptiononCreateWishlistpostAuth0FunctionAppSyncFunctionF3FF47EC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionEE16B87D",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnCreateWishlistResolver"
+   }
+  },
+  "SubscriptiononUpdateWishlistauth0FunctionSubscriptiononUpdateWishlistauth0FunctionAppSyncFunction9C260AB9": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononUpdateWishlistauth0Function/SubscriptiononUpdateWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateWishlistpostAuth0FunctionSubscriptiononUpdateWishlistpostAuth0FunctionAppSyncFunctionD609C360": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononUpdateWishlistpostAuth0Function/SubscriptiononUpdateWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateWishlistDataResolverFnSubscriptionOnUpdateWishlistDataResolverFnAppSyncFunction40109B95": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnUpdateWishlistDataResolverFn/SubscriptionOnUpdateWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onUpdateWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateWishlistauth0FunctionSubscriptiononUpdateWishlistauth0FunctionAppSyncFunction9C260AB9",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateWishlistpostAuth0FunctionSubscriptiononUpdateWishlistpostAuth0FunctionAppSyncFunctionD609C360",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateWishlistDataResolverFnSubscriptionOnUpdateWishlistDataResolverFnAppSyncFunction40109B95",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnUpdateWishlistResolver"
+   }
+  },
+  "SubscriptiononDeleteWishlistauth0FunctionSubscriptiononDeleteWishlistauth0FunctionAppSyncFunction34AF8FA8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteWishlistauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononDeleteWishlistauth0Function/SubscriptiononDeleteWishlistauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteWishlistpostAuth0FunctionSubscriptiononDeleteWishlistpostAuth0FunctionAppSyncFunctionA162433E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteWishlistpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononDeleteWishlistpostAuth0Function/SubscriptiononDeleteWishlistpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteWishlistDataResolverFnSubscriptionOnDeleteWishlistDataResolverFnAppSyncFunctionFD069F7C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteWishlistDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnDeleteWishlistDataResolverFn/SubscriptionOnDeleteWishlistDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteWishlistResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onDeleteWishlist",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteWishlistauth0FunctionSubscriptiononDeleteWishlistauth0FunctionAppSyncFunction34AF8FA8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteWishlistpostAuth0FunctionSubscriptiononDeleteWishlistpostAuth0FunctionAppSyncFunctionA162433E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteWishlistDataResolverFnSubscriptionOnDeleteWishlistDataResolverFnAppSyncFunctionFD069F7C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteWishlist\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnDeleteWishlistResolver"
+   }
+  },
+  "QuerylistWishlistByUseridauth0FunctionQuerylistWishlistByUseridauth0FunctionAppSyncFunction3119B8C8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistWishlistByUser_idauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistByUser_idauth0Function/QuerylistWishlistByUser_idauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistWishlistByUseridpostAuth0FunctionQuerylistWishlistByUseridpostAuth0FunctionAppSyncFunction84263AF0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistWishlistByUser_idpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistByUser_idpostAuth0Function/QuerylistWishlistByUser_idpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListWishlistByUseridDataResolverFnQueryListWishlistByUseridDataResolverFnAppSyncFunction8AD0ED3F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "WishlistDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListWishlistByUser_idDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/591f9166919c46a74450e2f445a93a4c410721e380b7070b4d88fc6748aff316.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098c998f215c333f57348ca8912f66057ae6b574fe34013033dc54362ee2372c.vtl"
+    }
+   },
+   "DependsOn": [
+    "WishlistDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryListWishlistByUser_idDataResolverFn/QueryListWishlistByUser_idDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QuerylistWishlistByUserida1abResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "listWishlistByUser_id",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistWishlistByUseridauth0FunctionQuerylistWishlistByUseridauth0FunctionAppSyncFunction3119B8C8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistWishlistByUseridpostAuth0FunctionQuerylistWishlistByUseridpostAuth0FunctionAppSyncFunction84263AF0",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListWishlistByUseridDataResolverFnQueryListWishlistByUseridDataResolverFnAppSyncFunction8AD0ED3F",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listWishlistByUser_id\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "WishlistTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryListWishlistByUserid0cefResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOQW6DQAxFz5L9xE2gF2hAXbYVdB+ZGYMmgAeNPYkixN0rSJWqq+8nP9k/gyzP4bDDm+yt6/eDb2D+IFFytaLtTdHyF0YcSSmuUAR2Xn1gU5GEFC2ZIomG8Q9bfs54k/Ps7oxjcA18YzPQCYWMxxHmKgwPOwy0GJwmubOFudz0silRsX6e/E/vie1aogjc+i5F3Br9fh6uFBcj+RlFSAXe1jCSwynZnnQtsKzuZ9IpqdnWtWLnuVsMB0dwkZdr9grHIxx2F/F+HxOrHwmqR/4ASzm85TYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttWishlistTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "WishlistTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "GetAtt:WishlistTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttWishlistTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "Wishlist-",
+      {
+       "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "GetAtt:WishlistTable:Name"
+      ]
+     ]
+    }
+   }
+  },
+  "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistWishlistTable5AE1F530TableArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "WishlistTable",
+     "TableArn"
+    ]
+   }
+  }
+ }
+}

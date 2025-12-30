@@ -1,0 +1,36 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119": {
+      "displayName": "VisaProxyLambda/Code",
+      "source": {
+        "path": "D:\\CloudAge Projects\\AWS use case project\\AgentCore\\Tutorial-16\\Project\\shopping-concierge-agent\\shopping-concierge-agent\\concierge_agent\\local-visa-server",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "998461587244-us-east-1-112565b6": {
+          "bucketName": "cdk-hnb659fds-assets-998461587244-us-east-1",
+          "objectKey": "7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::998461587244:role/cdk-hnb659fds-file-publishing-role-998461587244-us-east-1"
+        }
+      }
+    },
+    "da7c86a0a77c504d04010676a9e95f492c27368eae724b8795bf29e008752345": {
+      "displayName": "VisaLambdaStack-default Template",
+      "source": {
+        "path": "VisaLambdaStack-default.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "998461587244-us-east-1-fec01d15": {
+          "bucketName": "cdk-hnb659fds-assets-998461587244-us-east-1",
+          "objectKey": "da7c86a0a77c504d04010676a9e95f492c27368eae724b8795bf29e008752345.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::998461587244:role/cdk-hnb659fds-file-publishing-role-998461587244-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

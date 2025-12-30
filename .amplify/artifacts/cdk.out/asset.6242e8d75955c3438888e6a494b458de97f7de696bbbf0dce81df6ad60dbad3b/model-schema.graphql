@@ -1,0 +1,99 @@
+type User @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  id: String! @primaryKey
+  sessions: [ChatSession] @hasMany(references: ["userId"])
+  feedback: [Feedback] @hasMany(references: ["userId"])
+  profiles: [UserProfile] @hasMany(references: ["userId"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ChatSession @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  userId: ID!
+  user: User @belongsTo(references: ["userId"])
+  title: String
+  messages: [ChatMessage] @hasMany(references: ["sessionId"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ChatMessage @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  sessionId: ID!
+  session: ChatSession @belongsTo(references: ["sessionId"])
+  role: ChatMessageRole
+  content: String!
+  timestamp: AWSDateTime
+  feedback: [Feedback] @hasMany(references: ["messageId"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Feedback @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  messageId: ID!
+  message: ChatMessage @belongsTo(references: ["messageId"])
+  userId: ID!
+  user: User @belongsTo(references: ["userId"])
+  feedback: FeedbackFeedback
+  comment: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Wishlist @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listWishlistByUser_id")
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+}
+
+type Bookings @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listBookingsByUser_id")
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+}
+
+type UserProfile @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: private, operations: [read]}])
+{
+  id: ID! @primaryKey
+  userId: ID!
+  user: User @belongsTo(references: ["userId"])
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean @default(value: "false")
+  preferences: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+enum ChatMessageRole {
+  user
+  assistant
+}
+
+enum FeedbackFeedback {
+  up
+  down
+}

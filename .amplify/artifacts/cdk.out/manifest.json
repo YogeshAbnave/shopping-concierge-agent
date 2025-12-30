@@ -1,0 +1,3662 @@
+{
+  "version": "48.0.0",
+  "artifacts": {
+    "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "amplify:deployment-type": "sandbox",
+          "created-by": "amplify"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88704f7d95005ab9338fe69f2c611f0d2d95b51b5a3cea9e27a95c45159a2741.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107.assets"
+      ],
+      "metadata": {
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "amplify:deployment-type",
+                "Value": "sandbox"
+              },
+              {
+                "Key": "created-by",
+                "Value": "amplify"
+              }
+            ]
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/deploymentType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deploymentType"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "region"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPool4BA7F805"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/UserPoolAppClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPoolAppClient2626C6F8"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPool3FDE84CC"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/authenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleD8DA3689"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/authenticatedUserRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleDefaultPolicy82E52873"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/unauthenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthunauthenticatedUserRole2B524D9E"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPoolRoleAttachment045F17C8"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/userGroupRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthuserGroupRoleF0C548A7"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifyAuth/userGroup": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthuserGroup5EF75831"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolFE78B77CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolFE78B77CRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolAppClientCC7C3DFARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolAppClientCC7C3DFARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth/amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/auth.NestedStack/auth.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "auth179371D7"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/userPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/webClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webClientId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/identityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identityPoolId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/authRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "authRegion"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/allowUnauthenticatedIdentities": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "allowUnauthenticatedIdentities"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/signupAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "signupAttributes"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/usernameAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "usernameAttributes"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/verificationMechanisms": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "verificationMechanisms"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/passwordPolicyMinLength": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyMinLength"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/passwordPolicyRequirements": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyRequirements"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/mfaConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaConfiguration"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/mfaTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaTypes"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/socialProviders": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialProviders"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthCognitoDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthCognitoDomain"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthScope": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthScope"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthRedirectSignIn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignIn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthRedirectSignOut": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignOut"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthResponseType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthResponseType"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/oauthClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthClientId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/groups": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "groups"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPI42A6FA33"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPINONEDS684BF699"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableIsCompleteRoleF825222C"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleB4E71DEA"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleDefaultPolicyF6DABCB6"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkonEvent1DFC2ECC"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkisComplete2E51021B"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRole470BE899"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRoleDefaultPolicy89F3836A"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachine060600BC"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyTableManager.NestedStack/AmplifyTableManager.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Wishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WishlistTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Wishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/CustomTableWishlistTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Wishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/GetAttWishlistTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttWishlistTableStreamArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/GetAttWishlistTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttWishlistTableName"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "WishlistIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WishlistIAMRole130B259C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "WishlistIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "WishlistTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/WishlistDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WishlistDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "WishlistTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistpreAuth0Function/QuerygetWishlistpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetWishlistpreAuth0FunctionQuerygetWishlistpreAuth0FunctionAppSyncFunction565BA2D1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetWishlistpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistauth0Function/QuerygetWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetWishlistauth0FunctionQuerygetWishlistauth0FunctionAppSyncFunction3117C795"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerygetWishlistpostAuth0Function/QuerygetWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetWishlistpostAuth0FunctionQuerygetWishlistpostAuth0FunctionAppSyncFunctionD9E02186"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryGetWishlistDataResolverFn/QueryGetWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetWishlistDataResolverFnQueryGetWishlistDataResolverFnAppSyncFunction39B8737B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryGetWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistspreAuth0Function/QuerylistWishlistspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistspreAuth0FunctionQuerylistWishlistspreAuth0FunctionAppSyncFunctionB4190484"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistWishlistspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistsauth0Function/QuerylistWishlistsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistsauth0FunctionQuerylistWishlistsauth0FunctionAppSyncFunction09103281"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistWishlistsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistspostAuth0Function/QuerylistWishlistspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistspostAuth0FunctionQuerylistWishlistspostAuth0FunctionAppSyncFunction599B6561"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistWishlistspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryListWishlistsDataResolverFn/QueryListWishlistsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListWishlistsDataResolverFnQueryListWishlistsDataResolverFnAppSyncFunction07C98D3D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListWishlistsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryListWishlistsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listWishlists"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistinit0Function/MutationcreateWishlistinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateWishlistinit0FunctionMutationcreateWishlistinit0FunctionAppSyncFunctionA6C0713C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateWishlistinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistpreAuth0Function/MutationcreateWishlistpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateWishlistpreAuth0FunctionMutationcreateWishlistpreAuth0FunctionAppSyncFunction6F9F2674"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateWishlistpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistauth0Function/MutationcreateWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateWishlistauth0FunctionMutationcreateWishlistauth0FunctionAppSyncFunctionD46038EE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationcreateWishlistpostAuth0Function/MutationcreateWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateWishlistpostAuth0FunctionMutationcreateWishlistpostAuth0FunctionAppSyncFunction362780A8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationCreateWishlistDataResolverFn/MutationCreateWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateWishlistDataResolverFnMutationCreateWishlistDataResolverFnAppSyncFunctionE37280C5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationCreateWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistinit0Function/MutationupdateWishlistinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateWishlistinit0FunctionMutationupdateWishlistinit0FunctionAppSyncFunction41FAE5A6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateWishlistinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistpreAuth0Function/MutationupdateWishlistpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateWishlistpreAuth0FunctionMutationupdateWishlistpreAuth0FunctionAppSyncFunction95DA8359"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateWishlistpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistauth0Function/MutationupdateWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateWishlistauth0FunctionMutationupdateWishlistauth0FunctionAppSyncFunction4AFB8D17"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationupdateWishlistpostAuth0Function/MutationupdateWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateWishlistpostAuth0FunctionMutationupdateWishlistpostAuth0FunctionAppSyncFunction534E11F1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationUpdateWishlistDataResolverFn/MutationUpdateWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateWishlistDataResolverFnMutationUpdateWishlistDataResolverFnAppSyncFunction819A7F87"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationUpdateWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistpreAuth0Function/MutationdeleteWishlistpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteWishlistpreAuth0FunctionMutationdeleteWishlistpreAuth0FunctionAppSyncFunction89E0F5CC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteWishlistpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistauth0Function/MutationdeleteWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteWishlistauth0FunctionMutationdeleteWishlistauth0FunctionAppSyncFunctionEDDD4D26"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationdeleteWishlistpostAuth0Function/MutationdeleteWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteWishlistpostAuth0FunctionMutationdeleteWishlistpostAuth0FunctionAppSyncFunctionB7D7BD30"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/MutationDeleteWishlistDataResolverFn/MutationDeleteWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteWishlistDataResolverFnMutationDeleteWishlistDataResolverFnAppSyncFunction61483E48"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/mutationDeleteWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononCreateWishlistauth0Function/SubscriptiononCreateWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateWishlistauth0FunctionSubscriptiononCreateWishlistauth0FunctionAppSyncFunctionDAA07BE1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononCreateWishlistpostAuth0Function/SubscriptiononCreateWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateWishlistpostAuth0FunctionSubscriptiononCreateWishlistpostAuth0FunctionAppSyncFunctionF3FF47EC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnCreateWishlistDataResolverFn/SubscriptionOnCreateWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateWishlistDataResolverFnSubscriptionOnCreateWishlistDataResolverFnAppSyncFunctionEE16B87D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnCreateWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononUpdateWishlistauth0Function/SubscriptiononUpdateWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateWishlistauth0FunctionSubscriptiononUpdateWishlistauth0FunctionAppSyncFunction9C260AB9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononUpdateWishlistpostAuth0Function/SubscriptiononUpdateWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateWishlistpostAuth0FunctionSubscriptiononUpdateWishlistpostAuth0FunctionAppSyncFunctionD609C360"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnUpdateWishlistDataResolverFn/SubscriptionOnUpdateWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateWishlistDataResolverFnSubscriptionOnUpdateWishlistDataResolverFnAppSyncFunction40109B95"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnUpdateWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononDeleteWishlistauth0Function/SubscriptiononDeleteWishlistauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteWishlistauth0FunctionSubscriptiononDeleteWishlistauth0FunctionAppSyncFunction34AF8FA8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteWishlistauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptiononDeleteWishlistpostAuth0Function/SubscriptiononDeleteWishlistpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteWishlistpostAuth0FunctionSubscriptiononDeleteWishlistpostAuth0FunctionAppSyncFunctionA162433E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteWishlistpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/SubscriptionOnDeleteWishlistDataResolverFn/SubscriptionOnDeleteWishlistDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteWishlistDataResolverFnSubscriptionOnDeleteWishlistDataResolverFnAppSyncFunctionFD069F7C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteWishlistDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/subscriptionOnDeleteWishlistResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteWishlistResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteWishlist"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistByUser_idauth0Function/QuerylistWishlistByUser_idauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistByUseridauth0FunctionQuerylistWishlistByUseridauth0FunctionAppSyncFunction3119B8C8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistWishlistByUser_idauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QuerylistWishlistByUser_idpostAuth0Function/QuerylistWishlistByUser_idpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistByUseridpostAuth0FunctionQuerylistWishlistByUseridpostAuth0FunctionAppSyncFunction84263AF0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistWishlistByUser_idpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/QueryListWishlistByUser_idDataResolverFn/QueryListWishlistByUser_idDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListWishlistByUseridDataResolverFnQueryListWishlistByUseridDataResolverFnAppSyncFunction8AD0ED3F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListWishlistByUser_idDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/queryListWishlistByUserid0cefResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistWishlistByUserida1abResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listWishlistByUser_id"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistWishlistTable5AE1F530TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistWishlistTable5AE1F530TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Wishlist.NestedStack/Wishlist.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataWishlistNestedStackWishlistNestedStackResource0180FE55"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Bookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BookingsTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Bookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/CustomTableBookingsTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Bookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/GetAttBookingsTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttBookingsTableStreamArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/GetAttBookingsTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttBookingsTableName"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "BookingsIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BookingsIAMRole2410A2F9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "BookingsIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "BookingsTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BookingsDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "BookingsTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingspreAuth0Function/QuerygetBookingspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetBookingspreAuth0FunctionQuerygetBookingspreAuth0FunctionAppSyncFunctionE75D613B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetBookingspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingsauth0Function/QuerygetBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetBookingsauth0FunctionQuerygetBookingsauth0FunctionAppSyncFunction1EF9FDF9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingspostAuth0Function/QuerygetBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetBookingspostAuth0FunctionQuerygetBookingspostAuth0FunctionAppSyncFunction9A87CF0C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryGetBookingsDataResolverFn/QueryGetBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetBookingsDataResolverFnQueryGetBookingsDataResolverFnAppSyncFunctionA0FA0A3A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryGetBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingspreAuth0Function/QuerylistBookingspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingspreAuth0FunctionQuerylistBookingspreAuth0FunctionAppSyncFunction4FF4F0FB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistBookingspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsauth0Function/QuerylistBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingsauth0FunctionQuerylistBookingsauth0FunctionAppSyncFunctionCAE35A04"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingspostAuth0Function/QuerylistBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingspostAuth0FunctionQuerylistBookingspostAuth0FunctionAppSyncFunction27C1B5B3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryListBookingsDataResolverFn/QueryListBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListBookingsDataResolverFnQueryListBookingsDataResolverFnAppSyncFunctionA277640B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryListBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingsinit0Function/MutationcreateBookingsinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateBookingsinit0FunctionMutationcreateBookingsinit0FunctionAppSyncFunction9CBF0938"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateBookingsinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingspreAuth0Function/MutationcreateBookingspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateBookingspreAuth0FunctionMutationcreateBookingspreAuth0FunctionAppSyncFunctionA971A6DA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateBookingspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingsauth0Function/MutationcreateBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateBookingsauth0FunctionMutationcreateBookingsauth0FunctionAppSyncFunction05129788"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingspostAuth0Function/MutationcreateBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateBookingspostAuth0FunctionMutationcreateBookingspostAuth0FunctionAppSyncFunction45A1CC3D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationCreateBookingsDataResolverFn/MutationCreateBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateBookingsDataResolverFnMutationCreateBookingsDataResolverFnAppSyncFunction11749D58"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationCreateBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingsinit0Function/MutationupdateBookingsinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateBookingsinit0FunctionMutationupdateBookingsinit0FunctionAppSyncFunction9DE2A394"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateBookingsinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingspreAuth0Function/MutationupdateBookingspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateBookingspreAuth0FunctionMutationupdateBookingspreAuth0FunctionAppSyncFunction7542629F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateBookingspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingsauth0Function/MutationupdateBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateBookingsauth0FunctionMutationupdateBookingsauth0FunctionAppSyncFunction3F0149B8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingspostAuth0Function/MutationupdateBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateBookingspostAuth0FunctionMutationupdateBookingspostAuth0FunctionAppSyncFunction8B09C94E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationUpdateBookingsDataResolverFn/MutationUpdateBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateBookingsDataResolverFnMutationUpdateBookingsDataResolverFnAppSyncFunction8D89DB98"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationUpdateBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingspreAuth0Function/MutationdeleteBookingspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteBookingspreAuth0FunctionMutationdeleteBookingspreAuth0FunctionAppSyncFunction5A8ACD6D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteBookingspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingsauth0Function/MutationdeleteBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteBookingsauth0FunctionMutationdeleteBookingsauth0FunctionAppSyncFunctionB342C2FB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingspostAuth0Function/MutationdeleteBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteBookingspostAuth0FunctionMutationdeleteBookingspostAuth0FunctionAppSyncFunction697F2756"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationDeleteBookingsDataResolverFn/MutationDeleteBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteBookingsDataResolverFnMutationDeleteBookingsDataResolverFnAppSyncFunction4B7E58DD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationDeleteBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononCreateBookingsauth0Function/SubscriptiononCreateBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateBookingsauth0FunctionSubscriptiononCreateBookingsauth0FunctionAppSyncFunctionDA4B2510"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononCreateBookingspostAuth0Function/SubscriptiononCreateBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateBookingspostAuth0FunctionSubscriptiononCreateBookingspostAuth0FunctionAppSyncFunction387D9B73"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnCreateBookingsDataResolverFn/SubscriptionOnCreateBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateBookingsDataResolverFnSubscriptionOnCreateBookingsDataResolverFnAppSyncFunction021582A5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnCreateBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononUpdateBookingsauth0Function/SubscriptiononUpdateBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateBookingsauth0FunctionSubscriptiononUpdateBookingsauth0FunctionAppSyncFunction2FDBCDAF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononUpdateBookingspostAuth0Function/SubscriptiononUpdateBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateBookingspostAuth0FunctionSubscriptiononUpdateBookingspostAuth0FunctionAppSyncFunction0FBE8601"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnUpdateBookingsDataResolverFn/SubscriptionOnUpdateBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateBookingsDataResolverFnSubscriptionOnUpdateBookingsDataResolverFnAppSyncFunctionCDFA7EAF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnUpdateBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononDeleteBookingsauth0Function/SubscriptiononDeleteBookingsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteBookingsauth0FunctionSubscriptiononDeleteBookingsauth0FunctionAppSyncFunction561BFBDC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteBookingsauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononDeleteBookingspostAuth0Function/SubscriptiononDeleteBookingspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteBookingspostAuth0FunctionSubscriptiononDeleteBookingspostAuth0FunctionAppSyncFunction9432896C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteBookingspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnDeleteBookingsDataResolverFn/SubscriptionOnDeleteBookingsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteBookingsDataResolverFnSubscriptionOnDeleteBookingsDataResolverFnAppSyncFunctionF6850C8E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteBookingsDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnDeleteBookingsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteBookingsResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteBookings"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsByUser_idauth0Function/QuerylistBookingsByUser_idauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingsByUseridauth0FunctionQuerylistBookingsByUseridauth0FunctionAppSyncFunctionA00CE02C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistBookingsByUser_idauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsByUser_idpostAuth0Function/QuerylistBookingsByUser_idpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingsByUseridpostAuth0FunctionQuerylistBookingsByUseridpostAuth0FunctionAppSyncFunction32BF6E9A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistBookingsByUser_idpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryListBookingsByUser_idDataResolverFn/QueryListBookingsByUser_idDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListBookingsByUseridDataResolverFnQueryListBookingsByUseridDataResolverFnAppSyncFunction9D56913A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListBookingsByUser_idDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryListBookingsByUserid92e9Resolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistBookingsByUseride1abResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listBookingsByUser_id"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsBookingsTable3EB3A6F5TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsBookingsTable3EB3A6F5TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings.NestedStack/Bookings.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataBookingsNestedStackBookingsNestedStackResource606E7F6E"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserProfileTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/CustomTableUserProfileTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/GetAttUserProfileTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserProfileTableStreamArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/GetAttUserProfileTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserProfileTableName"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfileIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserProfileIAMRoleA4E2934B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfileIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfileTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/UserProfileDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserProfileDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserProfileTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerygetUserProfilepreAuth0Function/QuerygetUserProfilepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserProfilepreAuth0FunctionQuerygetUserProfilepreAuth0FunctionAppSyncFunctionA8F2289A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserProfilepreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerygetUserProfileauth0Function/QuerygetUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserProfileauth0FunctionQuerygetUserProfileauth0FunctionAppSyncFunctionDAD22839"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerygetUserProfilepostAuth0Function/QuerygetUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserProfilepostAuth0FunctionQuerygetUserProfilepostAuth0FunctionAppSyncFunction92890504"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QueryGetUserProfileDataResolverFn/QueryGetUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetUserProfileDataResolverFnQueryGetUserProfileDataResolverFnAppSyncFunction8EB8BD57"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/queryGetUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerylistUserProfilespreAuth0Function/QuerylistUserProfilespreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfilespreAuth0FunctionQuerylistUserProfilespreAuth0FunctionAppSyncFunction536D5235"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserProfilespreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerylistUserProfilesauth0Function/QuerylistUserProfilesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfilesauth0FunctionQuerylistUserProfilesauth0FunctionAppSyncFunction468B41DC"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserProfilesauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerylistUserProfilespostAuth0Function/QuerylistUserProfilespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfilespostAuth0FunctionQuerylistUserProfilespostAuth0FunctionAppSyncFunction01122A7A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserProfilespostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QueryListUserProfilesDataResolverFn/QueryListUserProfilesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListUserProfilesDataResolverFnQueryListUserProfilesDataResolverFnAppSyncFunctionA05E8B7A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListUserProfilesDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/queryListUserProfilesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listUserProfiles"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationcreateUserProfileinit0Function/MutationcreateUserProfileinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserProfileinit0FunctionMutationcreateUserProfileinit0FunctionAppSyncFunction7EFE9ED4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserProfileinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationcreateUserProfilepreAuth0Function/MutationcreateUserProfilepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserProfilepreAuth0FunctionMutationcreateUserProfilepreAuth0FunctionAppSyncFunction060B63D9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserProfilepreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationcreateUserProfileauth0Function/MutationcreateUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserProfileauth0FunctionMutationcreateUserProfileauth0FunctionAppSyncFunctionCF3841B8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationcreateUserProfilepostAuth0Function/MutationcreateUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserProfilepostAuth0FunctionMutationcreateUserProfilepostAuth0FunctionAppSyncFunctionF0C8FEFF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationCreateUserProfileDataResolverFn/MutationCreateUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateUserProfileDataResolverFnMutationCreateUserProfileDataResolverFnAppSyncFunction120FE646"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/mutationCreateUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationupdateUserProfileinit0Function/MutationupdateUserProfileinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserProfileinit0FunctionMutationupdateUserProfileinit0FunctionAppSyncFunction9A840BAA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserProfileinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationupdateUserProfilepreAuth0Function/MutationupdateUserProfilepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserProfilepreAuth0FunctionMutationupdateUserProfilepreAuth0FunctionAppSyncFunction19D7D821"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserProfilepreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationupdateUserProfileauth0Function/MutationupdateUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserProfileauth0FunctionMutationupdateUserProfileauth0FunctionAppSyncFunction7E8F945B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationupdateUserProfilepostAuth0Function/MutationupdateUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserProfilepostAuth0FunctionMutationupdateUserProfilepostAuth0FunctionAppSyncFunction206AFA76"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationUpdateUserProfileDataResolverFn/MutationUpdateUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateUserProfileDataResolverFnMutationUpdateUserProfileDataResolverFnAppSyncFunction1707D92F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/mutationUpdateUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationdeleteUserProfilepreAuth0Function/MutationdeleteUserProfilepreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserProfilepreAuth0FunctionMutationdeleteUserProfilepreAuth0FunctionAppSyncFunctionAF1B77BA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserProfilepreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationdeleteUserProfileauth0Function/MutationdeleteUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserProfileauth0FunctionMutationdeleteUserProfileauth0FunctionAppSyncFunction4A3AC4FD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationdeleteUserProfilepostAuth0Function/MutationdeleteUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserProfilepostAuth0FunctionMutationdeleteUserProfilepostAuth0FunctionAppSyncFunctionEE3F21F4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/MutationDeleteUserProfileDataResolverFn/MutationDeleteUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteUserProfileDataResolverFnMutationDeleteUserProfileDataResolverFnAppSyncFunction4835094F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/mutationDeleteUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononCreateUserProfileauth0Function/SubscriptiononCreateUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserProfileauth0FunctionSubscriptiononCreateUserProfileauth0FunctionAppSyncFunctionD90BBD82"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononCreateUserProfilepostAuth0Function/SubscriptiononCreateUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserProfilepostAuth0FunctionSubscriptiononCreateUserProfilepostAuth0FunctionAppSyncFunctionD659A080"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptionOnCreateUserProfileDataResolverFn/SubscriptionOnCreateUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateUserProfileDataResolverFnSubscriptionOnCreateUserProfileDataResolverFnAppSyncFunction08AFEB08"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/subscriptionOnCreateUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononUpdateUserProfileauth0Function/SubscriptiononUpdateUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserProfileauth0FunctionSubscriptiononUpdateUserProfileauth0FunctionAppSyncFunction48B7E90B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononUpdateUserProfilepostAuth0Function/SubscriptiononUpdateUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserProfilepostAuth0FunctionSubscriptiononUpdateUserProfilepostAuth0FunctionAppSyncFunction446153A7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptionOnUpdateUserProfileDataResolverFn/SubscriptionOnUpdateUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateUserProfileDataResolverFnSubscriptionOnUpdateUserProfileDataResolverFnAppSyncFunctionBCF119CA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/subscriptionOnUpdateUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononDeleteUserProfileauth0Function/SubscriptiononDeleteUserProfileauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserProfileauth0FunctionSubscriptiononDeleteUserProfileauth0FunctionAppSyncFunction4558BD0E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserProfileauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptiononDeleteUserProfilepostAuth0Function/SubscriptiononDeleteUserProfilepostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserProfilepostAuth0FunctionSubscriptiononDeleteUserProfilepostAuth0FunctionAppSyncFunction3E69A1F9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserProfilepostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/SubscriptionOnDeleteUserProfileDataResolverFn/SubscriptionOnDeleteUserProfileDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteUserProfileDataResolverFnSubscriptionOnDeleteUserProfileDataResolverFnAppSyncFunction6EDD6652"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteUserProfileDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/subscriptionOnDeleteUserProfileResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserProfileResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteUserProfile"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerylistUserProfileByUserIdauth0Function/QuerylistUserProfileByUserIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfileByUserIdauth0FunctionQuerylistUserProfileByUserIdauth0FunctionAppSyncFunction03AACC8F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserProfileByUserIdauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QuerylistUserProfileByUserIdpostAuth0Function/QuerylistUserProfileByUserIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfileByUserIdpostAuth0FunctionQuerylistUserProfileByUserIdpostAuth0FunctionAppSyncFunctionA16968CF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserProfileByUserIdpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/QueryListUserProfileByUserIdDataResolverFn/QueryListUserProfileByUserIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListUserProfileByUserIdDataResolverFnQueryListUserProfileByUserIdDataResolverFnAppSyncFunction5C9BCEA5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListUserProfileByUserIdDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/queryListUserProfileByUserIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserProfileByUserIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listUserProfileByUserId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileUserProfileTableCC37F51ETableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileUserProfileTableCC37F51ETableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/UserProfile.NestedStack/UserProfile.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataUserProfileNestedStackUserProfileNestedStackResource1B3713C5"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Feedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FeedbackTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Feedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/CustomTableFeedbackTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Feedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/GetAttFeedbackTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttFeedbackTableStreamArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/GetAttFeedbackTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttFeedbackTableName"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FeedbackIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FeedbackIAMRole450A878A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FeedbackIAMRole"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FeedbackTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/FeedbackDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FeedbackDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FeedbackTable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerygetFeedbackpreAuth0Function/QuerygetFeedbackpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetFeedbackpreAuth0FunctionQuerygetFeedbackpreAuth0FunctionAppSyncFunction71086A2C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetFeedbackpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerygetFeedbackauth0Function/QuerygetFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetFeedbackauth0FunctionQuerygetFeedbackauth0FunctionAppSyncFunction34FE05D0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerygetFeedbackpostAuth0Function/QuerygetFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetFeedbackpostAuth0FunctionQuerygetFeedbackpostAuth0FunctionAppSyncFunctionEF2A332A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QueryGetFeedbackDataResolverFn/QueryGetFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetFeedbackDataResolverFnQueryGetFeedbackDataResolverFnAppSyncFunction18E56B96"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/queryGetFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackspreAuth0Function/QuerylistFeedbackspreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackspreAuth0FunctionQuerylistFeedbackspreAuth0FunctionAppSyncFunction0DCFA5F6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackspreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbacksauth0Function/QuerylistFeedbacksauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbacksauth0FunctionQuerylistFeedbacksauth0FunctionAppSyncFunction968396B7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbacksauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackspostAuth0Function/QuerylistFeedbackspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackspostAuth0FunctionQuerylistFeedbackspostAuth0FunctionAppSyncFunction28CD12C1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackspostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QueryListFeedbacksDataResolverFn/QueryListFeedbacksDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListFeedbacksDataResolverFnQueryListFeedbacksDataResolverFnAppSyncFunctionB3037CEE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListFeedbacksDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/queryListFeedbacksResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listFeedbacks"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationcreateFeedbackinit0Function/MutationcreateFeedbackinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateFeedbackinit0FunctionMutationcreateFeedbackinit0FunctionAppSyncFunctionDDD7AE2A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateFeedbackinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationcreateFeedbackpreAuth0Function/MutationcreateFeedbackpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateFeedbackpreAuth0FunctionMutationcreateFeedbackpreAuth0FunctionAppSyncFunctionBBE051F6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateFeedbackpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationcreateFeedbackauth0Function/MutationcreateFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateFeedbackauth0FunctionMutationcreateFeedbackauth0FunctionAppSyncFunction0674A650"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationcreateFeedbackpostAuth0Function/MutationcreateFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateFeedbackpostAuth0FunctionMutationcreateFeedbackpostAuth0FunctionAppSyncFunction3683A1EA"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationCreateFeedbackDataResolverFn/MutationCreateFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateFeedbackDataResolverFnMutationCreateFeedbackDataResolverFnAppSyncFunction092A4904"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/mutationCreateFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationupdateFeedbackinit0Function/MutationupdateFeedbackinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateFeedbackinit0FunctionMutationupdateFeedbackinit0FunctionAppSyncFunction7FBCB332"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateFeedbackinit0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationupdateFeedbackpreAuth0Function/MutationupdateFeedbackpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateFeedbackpreAuth0FunctionMutationupdateFeedbackpreAuth0FunctionAppSyncFunction0801475F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateFeedbackpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationupdateFeedbackauth0Function/MutationupdateFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateFeedbackauth0FunctionMutationupdateFeedbackauth0FunctionAppSyncFunction5D6971DD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationupdateFeedbackpostAuth0Function/MutationupdateFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateFeedbackpostAuth0FunctionMutationupdateFeedbackpostAuth0FunctionAppSyncFunction2F53608D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationUpdateFeedbackDataResolverFn/MutationUpdateFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateFeedbackDataResolverFnMutationUpdateFeedbackDataResolverFnAppSyncFunction6263D95D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/mutationUpdateFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationdeleteFeedbackpreAuth0Function/MutationdeleteFeedbackpreAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteFeedbackpreAuth0FunctionMutationdeleteFeedbackpreAuth0FunctionAppSyncFunctionD6886FFD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteFeedbackpreAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationdeleteFeedbackauth0Function/MutationdeleteFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteFeedbackauth0FunctionMutationdeleteFeedbackauth0FunctionAppSyncFunctionF76BA2BD"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationdeleteFeedbackpostAuth0Function/MutationdeleteFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteFeedbackpostAuth0FunctionMutationdeleteFeedbackpostAuth0FunctionAppSyncFunction49A3EF69"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/MutationDeleteFeedbackDataResolverFn/MutationDeleteFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteFeedbackDataResolverFnMutationDeleteFeedbackDataResolverFnAppSyncFunction0132D9A6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/mutationDeleteFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononCreateFeedbackauth0Function/SubscriptiononCreateFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateFeedbackauth0FunctionSubscriptiononCreateFeedbackauth0FunctionAppSyncFunction166A1391"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononCreateFeedbackpostAuth0Function/SubscriptiononCreateFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateFeedbackpostAuth0FunctionSubscriptiononCreateFeedbackpostAuth0FunctionAppSyncFunctionB3E45429"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptionOnCreateFeedbackDataResolverFn/SubscriptionOnCreateFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateFeedbackDataResolverFnSubscriptionOnCreateFeedbackDataResolverFnAppSyncFunctionB108B7BB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/subscriptionOnCreateFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononUpdateFeedbackauth0Function/SubscriptiononUpdateFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateFeedbackauth0FunctionSubscriptiononUpdateFeedbackauth0FunctionAppSyncFunctionAF73EF49"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononUpdateFeedbackpostAuth0Function/SubscriptiononUpdateFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateFeedbackpostAuth0FunctionSubscriptiononUpdateFeedbackpostAuth0FunctionAppSyncFunction152C97EB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptionOnUpdateFeedbackDataResolverFn/SubscriptionOnUpdateFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateFeedbackDataResolverFnSubscriptionOnUpdateFeedbackDataResolverFnAppSyncFunctionEC261EAE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/subscriptionOnUpdateFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononDeleteFeedbackauth0Function/SubscriptiononDeleteFeedbackauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteFeedbackauth0FunctionSubscriptiononDeleteFeedbackauth0FunctionAppSyncFunction2C9EFE2F"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteFeedbackauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptiononDeleteFeedbackpostAuth0Function/SubscriptiononDeleteFeedbackpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteFeedbackpostAuth0FunctionSubscriptiononDeleteFeedbackpostAuth0FunctionAppSyncFunction029DA92D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteFeedbackpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/SubscriptionOnDeleteFeedbackDataResolverFn/SubscriptionOnDeleteFeedbackDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteFeedbackDataResolverFnSubscriptionOnDeleteFeedbackDataResolverFnAppSyncFunctionDE485A95"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteFeedbackDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/subscriptionOnDeleteFeedbackResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteFeedbackResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteFeedback"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackByMessageIdauth0Function/QuerylistFeedbackByMessageIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByMessageIdauth0FunctionQuerylistFeedbackByMessageIdauth0FunctionAppSyncFunctionE8308B6D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackByMessageIdauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackByMessageIdpostAuth0Function/QuerylistFeedbackByMessageIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByMessageIdpostAuth0FunctionQuerylistFeedbackByMessageIdpostAuth0FunctionAppSyncFunction77F6CAC2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackByMessageIdpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QueryListFeedbackByMessageIdDataResolverFn/QueryListFeedbackByMessageIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListFeedbackByMessageIdDataResolverFnQueryListFeedbackByMessageIdDataResolverFnAppSyncFunctionDB84E737"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListFeedbackByMessageIdDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/queryListFeedbackByMessageIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByMessageIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listFeedbackByMessageId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackByUserIdauth0Function/QuerylistFeedbackByUserIdauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByUserIdauth0FunctionQuerylistFeedbackByUserIdauth0FunctionAppSyncFunction9346E748"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackByUserIdauth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QuerylistFeedbackByUserIdpostAuth0Function/QuerylistFeedbackByUserIdpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByUserIdpostAuth0FunctionQuerylistFeedbackByUserIdpostAuth0FunctionAppSyncFunction37A10455"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistFeedbackByUserIdpostAuth0Function"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/QueryListFeedbackByUserIdDataResolverFn/QueryListFeedbackByUserIdDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListFeedbackByUserIdDataResolverFnQueryListFeedbackByUserIdDataResolverFnAppSyncFunction6DE6098E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListFeedbackByUserIdDataResolverFn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/queryListFeedbackByUserIdResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistFeedbackByUserIdResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listFeedbackByUserId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent673AD490Arn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackFeedbackTable0DA62E39TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackFeedbackTable0DA62E39TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Feedback.NestedStack/Feedback.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataFeedbackNestedStackFeedbackNestedStackResourceED7135D1"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicyF1C1C548"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource437F26F5"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayerE322F905"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/modelIntrospectionSchemaBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketF566B665"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/modelIntrospectionSchemaBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketPolicy4DAB0D15"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/modelIntrospectionSchemaBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketAutoDeleteObjectsCustomResourceFE57309F"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentAwsCliLayer13C432F7"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/modelIntrospectionSchemaBucketDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentCustomResource1536MiB104B97EC"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/AMPLIFY_DATA_GRAPHQL_ENDPOINTParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAGRAPHQLENDPOINTParameter1C2CBB16"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_BUCKET_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMABUCKETNAMEParameter47BF4F44"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_KEYParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMAKEYParameterB6AEAE8A"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/AMPLIFY_DATA_DEFAULT_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATADEFAULTNAMEParameterE7C23CC4"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolFE78B77CRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthUserPoolFE78B77CRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/reference-to-amplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEGraphQLUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEGraphQLUrl"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBE19C4F35DestinationBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiBE19C4F35DestinationBucketArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistNestedStackWishlistNestedStackResourceBC2B8DE9Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistWishlistTable5AE1F530TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistNestedStackWishlistNestedStackResourceBC2B8DE9Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataWishlistWishlistTable5AE1F530TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsNestedStackBookingsNestedStackResource79BEAFE5Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsBookingsTable3EB3A6F5TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsNestedStackBookingsNestedStackResource79BEAFE5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsBookingsTable3EB3A6F5TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileNestedStackUserProfileNestedStackResource163AC696Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileUserProfileTableCC37F51ETableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileNestedStackUserProfileNestedStackResource163AC696Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataUserProfileUserProfileTableCC37F51ETableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackNestedStackFeedbackNestedStackResource6D352068Outputs.amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackFeedbackTable0DA62E39TableArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackNestedStackFeedbackNestedStackResource6D352068Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataFeedbackFeedbackTable0DA62E39TableArn"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data.NestedStack/data.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "data7552DF31"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/awsAppsyncAdditionalAuthenticationTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/GatewayResourceServer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GatewayResourceServer16A83C32"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/GatewayMachineClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GatewayMachineClientEB8169A4"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/CognitoDomain/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CognitoDomainACF3E069"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/UserPoolDomainExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolDomainExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/UserPoolIdExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPoolIdExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/ClientIdExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ClientIdExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/RegionExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RegionExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/MachineClientIdExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MachineClientIdExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/WishlistTableNameExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WishlistTableNameExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/BookingsTableNameExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BookingsTableNameExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/UserProfileTableNameExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserProfileTableNameExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/FeedbackTableNameExport": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FeedbackTableNameExport"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "aws-cdk-lib/feature-flag-report": {
+      "type": "cdk:feature-flag-report",
+      "properties": {
+        "module": "aws-cdk-lib",
+        "flags": {
+          "@aws-cdk/aws-signer:signingProfileNamePassedToCfn": {
+            "recommendedValue": true,
+            "explanation": "Pass signingProfileName to CfnSigningProfile"
+          },
+          "@aws-cdk/core:newStyleStackSynthesis": {
+            "recommendedValue": true,
+            "explanation": "Switch to new stack synthesis method which enables CI/CD",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:stackRelativeExports": {
+            "recommendedValue": true,
+            "explanation": "Name exports based on the construct paths relative to the stack, rather than the global construct path",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-ecs-patterns:secGroupsDisablesImplicitOpenListener": {
+            "recommendedValue": true,
+            "explanation": "Disable implicit openListener when custom security groups are provided"
+          },
+          "@aws-cdk/aws-rds:lowercaseDbIdentifier": {
+            "recommendedValue": true,
+            "explanation": "Force lowercasing of RDS Cluster names in CDK",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": {
+            "recommendedValue": true,
+            "explanation": "Allow adding/removing multiple UsagePlanKeys independently",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-lambda:recognizeVersionProps": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the  `fn.currentVersion`.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-lambda:recognizeLayerVersion": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the `fn.currentVersion`."
+          },
+          "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have cloudfront distributions use the security policy TLSv1.2_2021 by default.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:checkSecretUsage": {
+            "recommendedValue": true,
+            "explanation": "Enable this flag to make it impossible to accidentally use SecretValues in unsafe locations"
+          },
+          "@aws-cdk/core:target-partitions": {
+            "recommendedValue": [
+              "aws",
+              "aws-cn"
+            ],
+            "explanation": "What regions to include in lookup tables of environment agnostic stacks"
+          },
+          "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": {
+            "recommendedValue": true,
+            "explanation": "ECS extensions will automatically add an `awslogs` driver if no logging is specified"
+          },
+          "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have Launch Templates generated by the `InstanceRequireImdsv2Aspect` use unique names."
+          },
+          "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": {
+            "recommendedValue": true,
+            "explanation": "ARN format used by ECS. In the new ARN format, the cluster name is part of the resource ID."
+          },
+          "@aws-cdk/aws-iam:minimizePolicies": {
+            "recommendedValue": true,
+            "explanation": "Minimize IAM policies by combining Statements"
+          },
+          "@aws-cdk/core:validateSnapshotRemovalPolicy": {
+            "recommendedValue": true,
+            "explanation": "Error on snapshot removal policies on resources that do not support it."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": {
+            "recommendedValue": true,
+            "explanation": "Generate key aliases that include the stack name"
+          },
+          "@aws-cdk/aws-s3:createDefaultLoggingPolicy": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to create an S3 bucket policy by default in cases where an AWS service would automatically create the Policy if one does not exist."
+          },
+          "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": {
+            "recommendedValue": true,
+            "explanation": "Restrict KMS key policy for encrypted Queues a bit more"
+          },
+          "@aws-cdk/aws-apigateway:disableCloudWatchRole": {
+            "recommendedValue": true,
+            "explanation": "Make default CloudWatch Role behavior safe for multiple API Gateways in one environment"
+          },
+          "@aws-cdk/core:enablePartitionLiterals": {
+            "recommendedValue": true,
+            "explanation": "Make ARNs concrete if AWS partition is known"
+          },
+          "@aws-cdk/aws-events:eventsTargetQueueSameAccount": {
+            "recommendedValue": true,
+            "explanation": "Event Rules may only push to encrypted SQS queues in the same account"
+          },
+          "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": {
+            "recommendedValue": true,
+            "explanation": "Avoid setting the \"ECS\" deployment controller when adding a circuit breaker"
+          },
+          "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature to create default policy names for imported roles that depend on the stack the role is in."
+          },
+          "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": {
+            "recommendedValue": true,
+            "explanation": "Use S3 Bucket Policy instead of ACLs for Server Access Logging"
+          },
+          "@aws-cdk/aws-route53-patters:useCertificate": {
+            "recommendedValue": true,
+            "explanation": "Use the official `Certificate` resource instead of `DnsValidatedCertificate`"
+          },
+          "@aws-cdk/customresources:installLatestAwsSdkDefault": {
+            "recommendedValue": false,
+            "explanation": "Whether to install the latest SDK by default in AwsCustomResource"
+          },
+          "@aws-cdk/aws-rds:databaseProxyUniqueResourceName": {
+            "recommendedValue": true,
+            "explanation": "Use unique resource name for Database Proxy"
+          },
+          "@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup": {
+            "recommendedValue": true,
+            "explanation": "Remove CloudWatch alarms from deployment group"
+          },
+          "@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId": {
+            "recommendedValue": true,
+            "explanation": "Include authorizer configuration in the calculation of the API deployment logical ID."
+          },
+          "@aws-cdk/aws-ec2:launchTemplateDefaultUserData": {
+            "recommendedValue": true,
+            "explanation": "Define user data for a launch template by default when a machine image is provided."
+          },
+          "@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments": {
+            "recommendedValue": true,
+            "explanation": "SecretTargetAttachments uses the ResourcePolicy of the attached Secret."
+          },
+          "@aws-cdk/aws-redshift:columnId": {
+            "recommendedValue": true,
+            "explanation": "Whether to use an ID to track Redshift column changes"
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": {
+            "recommendedValue": true,
+            "explanation": "Enable AmazonEMRServicePolicy_v2 managed policies"
+          },
+          "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": {
+            "recommendedValue": true,
+            "explanation": "Restrict access to the VPC default security group"
+          },
+          "@aws-cdk/aws-apigateway:requestValidatorUniqueId": {
+            "recommendedValue": true,
+            "explanation": "Generate a unique id for each RequestValidator added to a method"
+          },
+          "@aws-cdk/aws-kms:aliasNameRef": {
+            "recommendedValue": true,
+            "explanation": "KMS Alias name and keyArn will have implicit reference to KMS Key"
+          },
+          "@aws-cdk/aws-kms:applyImportedAliasPermissionsToPrincipal": {
+            "recommendedValue": true,
+            "explanation": "Enable grant methods on Aliases imported by name to use kms:ResourceAliases condition"
+          },
+          "@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig": {
+            "recommendedValue": true,
+            "explanation": "Generate a launch template when creating an AutoScalingGroup"
+          },
+          "@aws-cdk/core:includePrefixInUniqueNameGeneration": {
+            "recommendedValue": true,
+            "explanation": "Include the stack prefix in the stack name generation process"
+          },
+          "@aws-cdk/aws-efs:denyAnonymousAccess": {
+            "recommendedValue": true,
+            "explanation": "EFS denies anonymous clients accesses"
+          },
+          "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": {
+            "recommendedValue": true,
+            "explanation": "Enables support for Multi-AZ with Standby deployment for opensearch domains"
+          },
+          "@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion": {
+            "recommendedValue": true,
+            "explanation": "Enables aws-lambda-nodejs.Function to use the latest available NodeJs runtime as the default"
+          },
+          "@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, mount targets will have a stable logicalId that is linked to the associated subnet."
+          },
+          "@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a scope of InstanceParameterGroup for AuroraClusterInstance with each parameters will change."
+          },
+          "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": {
+            "recommendedValue": true,
+            "explanation": "When enabled, will always use the arn for identifiers for CfnSourceApiAssociation in the GraphqlApi construct rather than id."
+          },
+          "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": {
+            "recommendedValue": true,
+            "explanation": "When enabled, creating an RDS database cluster from a snapshot will only render credentials for snapshot credentials."
+          },
+          "@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the CodeCommit source action is using the default branch name 'main'."
+          },
+          "@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the logical ID of a Lambda permission for a Lambda action includes an alarm ID."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": {
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default value for crossAccountKeys to false."
+          },
+          "@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2": {
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default pipeline type to V2."
+          },
+          "@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope": {
+            "recommendedValue": true,
+            "explanation": "When enabled, IAM Policy created from KMS key grant will reduce the resource scope to this key only."
+          },
+          "@aws-cdk/pipelines:reduceAssetRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from PipelineAssetsFileRole trust policy",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-eks:nodegroupNameAttribute": {
+            "recommendedValue": true,
+            "explanation": "When enabled, nodegroupName attribute of the provisioned EKS NodeGroup will not have the cluster name prefix."
+          },
+          "@aws-cdk/aws-ec2:ebsDefaultGp3Volume": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default volume type of the EBS volume will be GP3"
+          },
+          "@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm": {
+            "recommendedValue": true,
+            "explanation": "When enabled, remove default deployment alarm settings"
+          },
+          "@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault": {
+            "recommendedValue": false,
+            "explanation": "When enabled, the custom resource used for `AwsCustomResource` will configure the `logApiResponseData` property as true by default"
+          },
+          "@aws-cdk/aws-s3:keepNotificationInImportedBucket": {
+            "recommendedValue": false,
+            "explanation": "When enabled, Adding notifications to a bucket in the current stack will not remove notification from imported stack."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:useNewS3UriParametersForBedrockInvokeModelTask": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use new props for S3 URI field in task definition of state machine for bedrock invoke model.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/core:explicitStackTags": {
+            "recommendedValue": true,
+            "explanation": "When enabled, stack tags need to be assigned explicitly on a Stack."
+          },
+          "@aws-cdk/aws-ecs:reduceEc2FargateCloudWatchPermissions": {
+            "recommendedValue": true,
+            "explanation": "When enabled, we will only grant the necessary permissions when users specify cloudwatch log group through logConfiguration"
+          },
+          "@aws-cdk/aws-dynamodb:resourcePolicyPerReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled will allow you to specify a resource policy per replica, and not copy the source table policy to all replicas"
+          },
+          "@aws-cdk/aws-ec2:ec2SumTImeoutEnabled": {
+            "recommendedValue": true,
+            "explanation": "When enabled, initOptions.timeout and resourceSignalTimeout values will be summed together."
+          },
+          "@aws-cdk/aws-appsync:appSyncGraphQLAPIScopeLambdaPermission": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a Lambda authorizer Permission created when using GraphqlApi will be properly scoped with a SourceArn."
+          },
+          "@aws-cdk/aws-rds:setCorrectValueForDatabaseInstanceReadReplicaInstanceResourceId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the value of property `instanceResourceId` in construct `DatabaseInstanceReadReplica` will be set to the correct value which is `DbiResourceId` instead of currently `DbInstanceArn`"
+          },
+          "@aws-cdk/core:cfnIncludeRejectComplexResourceUpdateCreatePolicyIntrinsics": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CFN templates added with `cfn-include` will error if the template contains Resource Update or Create policies with CFN Intrinsics that include non-primitive values."
+          },
+          "@aws-cdk/aws-lambda-nodejs:sdkV3ExcludeSmithyPackages": {
+            "recommendedValue": true,
+            "explanation": "When enabled, both `@aws-sdk` and `@smithy` packages will be excluded from the Lambda Node.js 18.x runtime to prevent version mismatches in bundled applications."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:fixRunEcsTaskPolicy": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resource of IAM Run Ecs policy generated by SFN EcsRunTask will reference the definition, instead of constructing ARN."
+          },
+          "@aws-cdk/aws-ec2:bastionHostUseAmazonLinux2023ByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the BastionHost construct will use the latest Amazon Linux 2023 AMI, instead of Amazon Linux 2."
+          },
+          "@aws-cdk/core:aspectStabilization": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a stabilization loop will be run when invoking Aspects during synthesis.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-route53-targets:userPoolDomainNameMethodWithoutCustomResource": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use a new method for DNS Name of user pool domain target without creating a custom resource."
+          },
+          "@aws-cdk/aws-elasticloadbalancingV2:albDualstackWithoutPublicIpv4SecurityGroupRulesDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default security group ingress rules will allow IPv6 ingress from anywhere"
+          },
+          "@aws-cdk/aws-iam:oidcRejectUnauthorizedConnections": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default behaviour of OIDC provider will reject unauthorized connections"
+          },
+          "@aws-cdk/core:enableAdditionalMetadataCollection": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will expand the scope of usage data collected to better inform CDK development and improve communication for security concerns and emerging issues."
+          },
+          "@aws-cdk/aws-lambda:createNewPoliciesWithAddToRolePolicy": {
+            "recommendedValue": false,
+            "explanation": "[Deprecated] When enabled, Lambda will create new inline policies with AddToRolePolicy instead of adding to the Default Policy Statement"
+          },
+          "@aws-cdk/aws-s3:setUniqueReplicationRoleName": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will automatically generate a unique role name that is used for s3 object replication."
+          },
+          "@aws-cdk/pipelines:reduceStageRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from Stage addActions trust policy",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-events:requireEventBusPolicySid": {
+            "recommendedValue": true,
+            "explanation": "When enabled, grantPutEventsTo() will use resource policies with Statement IDs for service principals."
+          },
+          "@aws-cdk/core:aspectPrioritiesMutating": {
+            "recommendedValue": true,
+            "explanation": "When set to true, Aspects added by the construct library on your behalf will be given a priority of MUTATING."
+          },
+          "@aws-cdk/aws-dynamodb:retainTableReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled, table replica will be default to the removal policy of source table unless specified otherwise."
+          },
+          "@aws-cdk/cognito:logUserPoolClientSecretValue": {
+            "recommendedValue": false,
+            "explanation": "When disabled, the value of the user pool client secret will not be logged in the custom resource lambda function logs."
+          },
+          "@aws-cdk/pipelines:reduceCrossAccountActionRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "When enabled, scopes down the trust policy for the cross-account action role",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-stepfunctions:useDistributedMapResultWriterV2": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resultWriterV2 property of DistributedMap will be used insted of resultWriter"
+          },
+          "@aws-cdk/s3-notifications:addS3TrustKeyPolicyForSnsSubscriptions": {
+            "recommendedValue": true,
+            "explanation": "Add an S3 trust policy to a KMS key resource policy for SNS subscriptions."
+          },
+          "@aws-cdk/aws-ec2:requirePrivateSubnetsForEgressOnlyInternetGateway": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the EgressOnlyGateway resource is only created if private subnets are defined in the dual-stack VPC."
+          },
+          "@aws-cdk/aws-ec2-alpha:useResourceIdForVpcV2Migration": {
+            "recommendedValue": false,
+            "explanation": "When enabled, use resource IDs for VPC V2 migration"
+          },
+          "@aws-cdk/aws-s3:publicAccessBlockedByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, setting any combination of options for BlockPublicAccess will automatically set true for any options not defined."
+          },
+          "@aws-cdk/aws-lambda:useCdkManagedLogGroup": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK creates and manages loggroup for the lambda function"
+          },
+          "@aws-cdk/aws-elasticloadbalancingv2:networkLoadBalancerWithSecurityGroupByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, Network Load Balancer will be created with a security group by default."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:httpInvokeDynamicJsonPathEndpoint": {
+            "recommendedValue": true,
+            "explanation": "When enabled, allows using a dynamic apiEndpoint with JSONPath format in HttpInvoke tasks.",
+            "unconfiguredBehavesLike": {
+              "v2": true
+            }
+          },
+          "@aws-cdk/aws-ecs-patterns:uniqueTargetGroupId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, ECS patterns will generate unique target group IDs to prevent conflicts during load balancer replacement"
+          },
+          "@aws-cdk/aws-route53-patterns:useDistribution": {
+            "recommendedValue": true,
+            "explanation": "Use the `Distribution` resource instead of `CloudFrontWebDistribution`"
+          }
+        }
+      }
+    }
+  },
+  "minimumCliVersion": "2.1033.0"
+}

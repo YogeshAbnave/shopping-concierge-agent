@@ -1,0 +1,36 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6": {
+      "displayName": "FrontendStack-shopping-v2/Custom::S3AutoDeleteObjectsCustomResourceProvider Code",
+      "source": {
+        "path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "992167236365-us-east-1-ad0374e4": {
+          "bucketName": "cdk-hnb659fds-assets-992167236365-us-east-1",
+          "objectKey": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::992167236365:role/cdk-hnb659fds-file-publishing-role-992167236365-us-east-1"
+        }
+      }
+    },
+    "e72a9f6f1605f85162ba67fa936267067e3c26230c2d8da655ee5d91c3f47851": {
+      "displayName": "FrontendStack-shopping-v2 Template",
+      "source": {
+        "path": "FrontendStack-shopping-v2.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "992167236365-us-east-1-5922e44c": {
+          "bucketName": "cdk-hnb659fds-assets-992167236365-us-east-1",
+          "objectKey": "e72a9f6f1605f85162ba67fa936267067e3c26230c2d8da655ee5d91c3f47851.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::992167236365:role/cdk-hnb659fds-file-publishing-role-992167236365-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

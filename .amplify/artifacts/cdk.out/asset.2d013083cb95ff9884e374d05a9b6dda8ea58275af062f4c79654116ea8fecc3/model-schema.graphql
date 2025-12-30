@@ -1,0 +1,78 @@
+type ChatSession @model @auth(rules: [{allow: private, operations: [create, read, update, delete]}])
+{
+  id: ID! @primaryKey
+  userId: String!
+  title: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ChatMessage @model @auth(rules: [{allow: private, operations: [create, read, update, delete]}])
+{
+  id: ID! @primaryKey
+  sessionId: String!
+  role: ChatMessageRole
+  content: String!
+  timestamp: AWSDateTime
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Feedback @model @auth(rules: [{allow: private, operations: [create, read, update, delete]}])
+{
+  id: ID! @primaryKey
+  messageId: String!
+  userId: String!
+  feedback: FeedbackFeedback
+  comment: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Wishlist @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listWishlistByUser_id")
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+}
+
+type Bookings @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listBookingsByUser_id")
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+}
+
+type UserProfile @model @auth(rules: [{allow: private, operations: [create, read, update, delete]}])
+{
+  id: ID! @primaryKey
+  userId: String!
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean @default(value: "false")
+  preferences: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+enum ChatMessageRole {
+  user
+  assistant
+}
+
+enum FeedbackFeedback {
+  up
+  down
+}

@@ -1,0 +1,73 @@
+type User @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  createdAt: String
+  updatedAt: String
+}
+
+type ChatSession @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  userId: String! @index(queryField: "listChatSessionByUserId")
+  title: String
+  createdAt: String
+  updatedAt: String
+}
+
+type ChatMessage @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  sessionId: String! @index(queryField: "listChatMessageBySessionId")
+  role: String!
+  content: String!
+  timestamp: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Wishlist @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listWishlistByUser_id")
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+}
+
+type Bookings @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listBookingsByUser_id")
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+}
+
+type UserProfile @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  userId: String! @index(queryField: "listUserProfileByUserId")
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean
+  preferences: String
+  createdAt: String
+  updatedAt: String
+}
+
+type Feedback @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  messageId: String! @index(queryField: "listFeedbackByMessageId")
+  userId: String! @index(queryField: "listFeedbackByUserId")
+  feedback: String!
+  comment: String
+}

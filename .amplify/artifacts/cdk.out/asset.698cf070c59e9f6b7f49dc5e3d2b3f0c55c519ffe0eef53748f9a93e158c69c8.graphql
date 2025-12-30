@@ -1,0 +1,723 @@
+type ChatSession @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  userId: String!
+  title: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ChatMessage @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  sessionId: String!
+  role: ChatMessageRole
+  content: String!
+  timestamp: AWSDateTime
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Feedback @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  messageId: String!
+  userId: String!
+  feedback: FeedbackFeedback
+  comment: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Wishlist @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  user_id: String!
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type Bookings @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  user_id: String!
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserProfile @aws_iam @aws_cognito_user_pools {
+  id: ID!
+  userId: String!
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean
+  preferences: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+enum ChatMessageRole {
+  user
+  assistant
+}
+
+enum FeedbackFeedback {
+  up
+  down
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelChatSessionConnection @aws_iam @aws_cognito_user_pools {
+  items: [ChatSession]!
+  nextToken: String
+}
+
+input ModelChatSessionFilterInput {
+  id: ModelIDInput
+  userId: ModelStringInput
+  title: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelChatSessionFilterInput]
+  or: [ModelChatSessionFilterInput]
+  not: ModelChatSessionFilterInput
+}
+
+type Query {
+  getChatSession(id: ID!): ChatSession @aws_iam @aws_cognito_user_pools
+  listChatSessions(id: ID, filter: ModelChatSessionFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelChatSessionConnection @aws_iam @aws_cognito_user_pools
+  getChatMessage(id: ID!): ChatMessage @aws_iam @aws_cognito_user_pools
+  listChatMessages(id: ID, filter: ModelChatMessageFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelChatMessageConnection @aws_iam @aws_cognito_user_pools
+  getFeedback(id: ID!): Feedback @aws_iam @aws_cognito_user_pools
+  listFeedbacks(id: ID, filter: ModelFeedbackFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelFeedbackConnection @aws_iam @aws_cognito_user_pools
+  getWishlist(id: ID!): Wishlist @aws_iam @aws_cognito_user_pools
+  listWishlists(id: ID, filter: ModelWishlistFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelWishlistConnection @aws_iam @aws_cognito_user_pools
+  listWishlistByUser_id(user_id: String!, sortDirection: ModelSortDirection, filter: ModelWishlistFilterInput, limit: Int, nextToken: String): ModelWishlistConnection @aws_iam @aws_cognito_user_pools
+  getBookings(id: ID!): Bookings @aws_iam @aws_cognito_user_pools
+  listBookings(id: ID, filter: ModelBookingsFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelBookingsConnection @aws_iam @aws_cognito_user_pools
+  listBookingsByUser_id(user_id: String!, sortDirection: ModelSortDirection, filter: ModelBookingsFilterInput, limit: Int, nextToken: String): ModelBookingsConnection @aws_iam @aws_cognito_user_pools
+  getUserProfile(id: ID!): UserProfile @aws_iam @aws_cognito_user_pools
+  listUserProfiles(id: ID, filter: ModelUserProfileFilterInput, limit: Int, nextToken: String, sortDirection: ModelSortDirection): ModelUserProfileConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelChatSessionConditionInput {
+  userId: ModelStringInput
+  title: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelChatSessionConditionInput]
+  or: [ModelChatSessionConditionInput]
+  not: ModelChatSessionConditionInput
+}
+
+input CreateChatSessionInput {
+  id: ID
+  userId: String!
+  title: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateChatSessionInput {
+  id: ID!
+  userId: String
+  title: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteChatSessionInput {
+  id: ID!
+}
+
+type Mutation {
+  createChatSession(input: CreateChatSessionInput!, condition: ModelChatSessionConditionInput): ChatSession @aws_iam @aws_cognito_user_pools
+  updateChatSession(input: UpdateChatSessionInput!, condition: ModelChatSessionConditionInput): ChatSession @aws_iam @aws_cognito_user_pools
+  deleteChatSession(input: DeleteChatSessionInput!, condition: ModelChatSessionConditionInput): ChatSession @aws_iam @aws_cognito_user_pools
+  createChatMessage(input: CreateChatMessageInput!, condition: ModelChatMessageConditionInput): ChatMessage @aws_iam @aws_cognito_user_pools
+  updateChatMessage(input: UpdateChatMessageInput!, condition: ModelChatMessageConditionInput): ChatMessage @aws_iam @aws_cognito_user_pools
+  deleteChatMessage(input: DeleteChatMessageInput!, condition: ModelChatMessageConditionInput): ChatMessage @aws_iam @aws_cognito_user_pools
+  createFeedback(input: CreateFeedbackInput!, condition: ModelFeedbackConditionInput): Feedback @aws_iam @aws_cognito_user_pools
+  updateFeedback(input: UpdateFeedbackInput!, condition: ModelFeedbackConditionInput): Feedback @aws_iam @aws_cognito_user_pools
+  deleteFeedback(input: DeleteFeedbackInput!, condition: ModelFeedbackConditionInput): Feedback @aws_iam @aws_cognito_user_pools
+  createWishlist(input: CreateWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_iam @aws_cognito_user_pools
+  updateWishlist(input: UpdateWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_iam @aws_cognito_user_pools
+  deleteWishlist(input: DeleteWishlistInput!, condition: ModelWishlistConditionInput): Wishlist @aws_iam @aws_cognito_user_pools
+  createBookings(input: CreateBookingsInput!, condition: ModelBookingsConditionInput): Bookings @aws_iam @aws_cognito_user_pools
+  updateBookings(input: UpdateBookingsInput!, condition: ModelBookingsConditionInput): Bookings @aws_iam @aws_cognito_user_pools
+  deleteBookings(input: DeleteBookingsInput!, condition: ModelBookingsConditionInput): Bookings @aws_iam @aws_cognito_user_pools
+  createUserProfile(input: CreateUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+  updateUserProfile(input: UpdateUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+  deleteUserProfile(input: DeleteUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionChatSessionFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionStringInput
+  title: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionChatSessionFilterInput]
+  or: [ModelSubscriptionChatSessionFilterInput]
+}
+
+type Subscription {
+  onCreateChatSession(filter: ModelSubscriptionChatSessionFilterInput): ChatSession @aws_subscribe(mutations: ["createChatSession"]) @aws_iam @aws_cognito_user_pools
+  onUpdateChatSession(filter: ModelSubscriptionChatSessionFilterInput): ChatSession @aws_subscribe(mutations: ["updateChatSession"]) @aws_iam @aws_cognito_user_pools
+  onDeleteChatSession(filter: ModelSubscriptionChatSessionFilterInput): ChatSession @aws_subscribe(mutations: ["deleteChatSession"]) @aws_iam @aws_cognito_user_pools
+  onCreateChatMessage(filter: ModelSubscriptionChatMessageFilterInput): ChatMessage @aws_subscribe(mutations: ["createChatMessage"]) @aws_iam @aws_cognito_user_pools
+  onUpdateChatMessage(filter: ModelSubscriptionChatMessageFilterInput): ChatMessage @aws_subscribe(mutations: ["updateChatMessage"]) @aws_iam @aws_cognito_user_pools
+  onDeleteChatMessage(filter: ModelSubscriptionChatMessageFilterInput): ChatMessage @aws_subscribe(mutations: ["deleteChatMessage"]) @aws_iam @aws_cognito_user_pools
+  onCreateFeedback(filter: ModelSubscriptionFeedbackFilterInput): Feedback @aws_subscribe(mutations: ["createFeedback"]) @aws_iam @aws_cognito_user_pools
+  onUpdateFeedback(filter: ModelSubscriptionFeedbackFilterInput): Feedback @aws_subscribe(mutations: ["updateFeedback"]) @aws_iam @aws_cognito_user_pools
+  onDeleteFeedback(filter: ModelSubscriptionFeedbackFilterInput): Feedback @aws_subscribe(mutations: ["deleteFeedback"]) @aws_iam @aws_cognito_user_pools
+  onCreateWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["createWishlist"]) @aws_iam @aws_cognito_user_pools
+  onUpdateWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["updateWishlist"]) @aws_iam @aws_cognito_user_pools
+  onDeleteWishlist(filter: ModelSubscriptionWishlistFilterInput): Wishlist @aws_subscribe(mutations: ["deleteWishlist"]) @aws_iam @aws_cognito_user_pools
+  onCreateBookings(filter: ModelSubscriptionBookingsFilterInput): Bookings @aws_subscribe(mutations: ["createBookings"]) @aws_iam @aws_cognito_user_pools
+  onUpdateBookings(filter: ModelSubscriptionBookingsFilterInput): Bookings @aws_subscribe(mutations: ["updateBookings"]) @aws_iam @aws_cognito_user_pools
+  onDeleteBookings(filter: ModelSubscriptionBookingsFilterInput): Bookings @aws_subscribe(mutations: ["deleteBookings"]) @aws_iam @aws_cognito_user_pools
+  onCreateUserProfile(filter: ModelSubscriptionUserProfileFilterInput): UserProfile @aws_subscribe(mutations: ["createUserProfile"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUserProfile(filter: ModelSubscriptionUserProfileFilterInput): UserProfile @aws_subscribe(mutations: ["updateUserProfile"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUserProfile(filter: ModelSubscriptionUserProfileFilterInput): UserProfile @aws_subscribe(mutations: ["deleteUserProfile"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelChatMessageConnection @aws_iam @aws_cognito_user_pools {
+  items: [ChatMessage]!
+  nextToken: String
+}
+
+input ModelChatMessageRoleInput {
+  eq: ChatMessageRole
+  ne: ChatMessageRole
+}
+
+input ModelChatMessageFilterInput {
+  id: ModelIDInput
+  sessionId: ModelStringInput
+  role: ModelChatMessageRoleInput
+  content: ModelStringInput
+  timestamp: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelChatMessageFilterInput]
+  or: [ModelChatMessageFilterInput]
+  not: ModelChatMessageFilterInput
+}
+
+input ModelChatMessageConditionInput {
+  sessionId: ModelStringInput
+  role: ModelChatMessageRoleInput
+  content: ModelStringInput
+  timestamp: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelChatMessageConditionInput]
+  or: [ModelChatMessageConditionInput]
+  not: ModelChatMessageConditionInput
+}
+
+input CreateChatMessageInput {
+  id: ID
+  sessionId: String!
+  role: ChatMessageRole
+  content: String!
+  timestamp: AWSDateTime
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateChatMessageInput {
+  id: ID!
+  sessionId: String
+  role: ChatMessageRole
+  content: String
+  timestamp: AWSDateTime
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteChatMessageInput {
+  id: ID!
+}
+
+input ModelSubscriptionChatMessageFilterInput {
+  id: ModelSubscriptionIDInput
+  sessionId: ModelSubscriptionStringInput
+  role: ModelSubscriptionStringInput
+  content: ModelSubscriptionStringInput
+  timestamp: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionChatMessageFilterInput]
+  or: [ModelSubscriptionChatMessageFilterInput]
+}
+
+type ModelFeedbackConnection @aws_iam @aws_cognito_user_pools {
+  items: [Feedback]!
+  nextToken: String
+}
+
+input ModelFeedbackFeedbackInput {
+  eq: FeedbackFeedback
+  ne: FeedbackFeedback
+}
+
+input ModelFeedbackFilterInput {
+  id: ModelIDInput
+  messageId: ModelStringInput
+  userId: ModelStringInput
+  feedback: ModelFeedbackFeedbackInput
+  comment: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelFeedbackFilterInput]
+  or: [ModelFeedbackFilterInput]
+  not: ModelFeedbackFilterInput
+}
+
+input ModelFeedbackConditionInput {
+  messageId: ModelStringInput
+  userId: ModelStringInput
+  feedback: ModelFeedbackFeedbackInput
+  comment: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelFeedbackConditionInput]
+  or: [ModelFeedbackConditionInput]
+  not: ModelFeedbackConditionInput
+}
+
+input CreateFeedbackInput {
+  id: ID
+  messageId: String!
+  userId: String!
+  feedback: FeedbackFeedback
+  comment: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateFeedbackInput {
+  id: ID!
+  messageId: String
+  userId: String
+  feedback: FeedbackFeedback
+  comment: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteFeedbackInput {
+  id: ID!
+}
+
+input ModelSubscriptionFeedbackFilterInput {
+  id: ModelSubscriptionIDInput
+  messageId: ModelSubscriptionStringInput
+  userId: ModelSubscriptionStringInput
+  feedback: ModelSubscriptionStringInput
+  comment: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionFeedbackFilterInput]
+  or: [ModelSubscriptionFeedbackFilterInput]
+}
+
+type ModelWishlistConnection @aws_iam @aws_cognito_user_pools {
+  items: [Wishlist]!
+  nextToken: String
+}
+
+input ModelWishlistFilterInput {
+  id: ModelIDInput
+  user_id: ModelStringInput
+  asin: ModelStringInput
+  title: ModelStringInput
+  price: ModelStringInput
+  reviews: ModelStringInput
+  url: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelWishlistFilterInput]
+  or: [ModelWishlistFilterInput]
+  not: ModelWishlistFilterInput
+}
+
+input ModelWishlistConditionInput {
+  user_id: ModelStringInput
+  asin: ModelStringInput
+  title: ModelStringInput
+  price: ModelStringInput
+  reviews: ModelStringInput
+  url: ModelStringInput
+  and: [ModelWishlistConditionInput]
+  or: [ModelWishlistConditionInput]
+  not: ModelWishlistConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateWishlistInput {
+  id: ID
+  user_id: String!
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+}
+
+input UpdateWishlistInput {
+  id: ID!
+  user_id: String
+  asin: String
+  title: String
+  price: String
+  reviews: String
+  url: String
+}
+
+input DeleteWishlistInput {
+  id: ID!
+}
+
+input ModelSubscriptionWishlistFilterInput {
+  id: ModelSubscriptionIDInput
+  user_id: ModelSubscriptionStringInput
+  asin: ModelSubscriptionStringInput
+  title: ModelSubscriptionStringInput
+  price: ModelSubscriptionStringInput
+  reviews: ModelSubscriptionStringInput
+  url: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionWishlistFilterInput]
+  or: [ModelSubscriptionWishlistFilterInput]
+}
+
+type ModelBookingsConnection @aws_iam @aws_cognito_user_pools {
+  items: [Bookings]!
+  nextToken: String
+}
+
+input ModelBookingsFilterInput {
+  id: ModelIDInput
+  user_id: ModelStringInput
+  order_id: ModelStringInput
+  item_type: ModelStringInput
+  title: ModelStringInput
+  price: ModelStringInput
+  purchase_date: ModelStringInput
+  asin: ModelStringInput
+  url: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBookingsFilterInput]
+  or: [ModelBookingsFilterInput]
+  not: ModelBookingsFilterInput
+}
+
+input ModelBookingsConditionInput {
+  user_id: ModelStringInput
+  order_id: ModelStringInput
+  item_type: ModelStringInput
+  title: ModelStringInput
+  price: ModelStringInput
+  purchase_date: ModelStringInput
+  asin: ModelStringInput
+  url: ModelStringInput
+  and: [ModelBookingsConditionInput]
+  or: [ModelBookingsConditionInput]
+  not: ModelBookingsConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+}
+
+input CreateBookingsInput {
+  id: ID
+  user_id: String!
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+}
+
+input UpdateBookingsInput {
+  id: ID!
+  user_id: String
+  order_id: String
+  item_type: String
+  title: String
+  price: String
+  purchase_date: String
+  asin: String
+  url: String
+}
+
+input DeleteBookingsInput {
+  id: ID!
+}
+
+input ModelSubscriptionBookingsFilterInput {
+  id: ModelSubscriptionIDInput
+  user_id: ModelSubscriptionStringInput
+  order_id: ModelSubscriptionStringInput
+  item_type: ModelSubscriptionStringInput
+  title: ModelSubscriptionStringInput
+  price: ModelSubscriptionStringInput
+  purchase_date: ModelSubscriptionStringInput
+  asin: ModelSubscriptionStringInput
+  url: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionBookingsFilterInput]
+  or: [ModelSubscriptionBookingsFilterInput]
+}
+
+type ModelUserProfileConnection @aws_iam @aws_cognito_user_pools {
+  items: [UserProfile]!
+  nextToken: String
+}
+
+input ModelUserProfileFilterInput {
+  id: ModelIDInput
+  userId: ModelStringInput
+  name: ModelStringInput
+  email: ModelStringInput
+  address: ModelStringInput
+  notes: ModelStringInput
+  onboardingCompleted: ModelBooleanInput
+  preferences: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserProfileFilterInput]
+  or: [ModelUserProfileFilterInput]
+  not: ModelUserProfileFilterInput
+}
+
+input ModelUserProfileConditionInput {
+  userId: ModelStringInput
+  name: ModelStringInput
+  email: ModelStringInput
+  address: ModelStringInput
+  notes: ModelStringInput
+  onboardingCompleted: ModelBooleanInput
+  preferences: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserProfileConditionInput]
+  or: [ModelUserProfileConditionInput]
+  not: ModelUserProfileConditionInput
+}
+
+input CreateUserProfileInput {
+  id: ID
+  userId: String!
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean
+  preferences: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateUserProfileInput {
+  id: ID!
+  userId: String
+  name: String
+  email: String
+  address: String
+  notes: String
+  onboardingCompleted: Boolean
+  preferences: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteUserProfileInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserProfileFilterInput {
+  id: ModelSubscriptionIDInput
+  userId: ModelSubscriptionStringInput
+  name: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  address: ModelSubscriptionStringInput
+  notes: ModelSubscriptionStringInput
+  onboardingCompleted: ModelSubscriptionBooleanInput
+  preferences: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserProfileFilterInput]
+  or: [ModelSubscriptionUserProfileFilterInput]
+}

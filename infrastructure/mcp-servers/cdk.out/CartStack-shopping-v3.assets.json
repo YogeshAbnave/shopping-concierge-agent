@@ -1,0 +1,42 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "f67517e40d24b7479ac5c5bcc34a0c1a29b624524064496ca64229cc103c886d": {
+      "displayName": "CartStack-shopping-v3 Template",
+      "source": {
+        "path": "CartStack-shopping-v3.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "998461587244-us-east-1-7be6567a": {
+          "bucketName": "cdk-hnb659fds-assets-998461587244-us-east-1",
+          "objectKey": "f67517e40d24b7479ac5c5bcc34a0c1a29b624524064496ca64229cc103c886d.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::998461587244:role/cdk-hnb659fds-file-publishing-role-998461587244-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {
+    "c5a6712e135ba64f0d0f6051868f66f6cedb2effde15b13ad06a0ddefa8ba18f": {
+      "displayName": "Runtime/AgentRuntimeArtifact107a62a21f1bbaa0d8e2e0ec3f54ce9c",
+      "source": {
+        "directory": "asset.c5a6712e135ba64f0d0f6051868f66f6cedb2effde15b13ad06a0ddefa8ba18f",
+        "dockerBuildArgs": {
+          "--platform": "linux/arm64",
+          "BUILDPLATFORM": "linux/arm64",
+          "TARGETPLATFORM": "linux/arm64"
+        },
+        "platform": "linux/arm64"
+      },
+      "destinations": {
+        "998461587244-us-east-1-9919fe3e": {
+          "repositoryName": "cdk-hnb659fds-container-assets-998461587244-us-east-1",
+          "imageTag": "c5a6712e135ba64f0d0f6051868f66f6cedb2effde15b13ad06a0ddefa8ba18f",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::998461587244:role/cdk-hnb659fds-image-publishing-role-998461587244-us-east-1"
+        }
+      }
+    }
+  }
+}

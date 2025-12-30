@@ -1,0 +1,650 @@
+{
+ "Description": "Visa Payment API Proxy Lambda Stack for deployment: shopping-v3",
+ "Resources": {
+  "VisaProxyLambdaServiceRole67EB76CB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyLambda/ServiceRole/Resource"
+   }
+  },
+  "VisaProxyLambdaServiceRoleDefaultPolicy7E396CD4": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "secretsmanager:GetSecretValue",
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:secretsmanager:us-east-1:992167236365:secret:concierge-agent/shopping-v3/visa/*",
+        "arn:aws:secretsmanager:us-east-1:992167236365:secret:visa/*"
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "VisaProxyLambdaServiceRoleDefaultPolicy7E396CD4",
+    "Roles": [
+     {
+      "Ref": "VisaProxyLambdaServiceRole67EB76CB"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyLambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "VisaProxyLambda99E10BBC": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-992167236365-us-east-1",
+     "S3Key": "7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119.zip"
+    },
+    "Description": "Visa Payment API Proxy Lambda",
+    "Environment": {
+     "Variables": {
+      "CLIENT_APP_ID": "VICTestAccountTR"
+     }
+    },
+    "Handler": "handler.handler",
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "VisaProxyLambdaServiceRole67EB76CB",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.11",
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "VisaProxyLambdaServiceRoleDefaultPolicy7E396CD4",
+    "VisaProxyLambdaServiceRole67EB76CB"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyLambda/Resource",
+    "aws:asset:path": "asset.7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "VisaProxyLambdaLogGroup17557A0F": {
+   "Type": "AWS::Logs::LogGroup",
+   "Properties": {
+    "LogGroupName": {
+     "Fn::Join": [
+      "",
+      [
+       "/aws/lambda/",
+       {
+        "Ref": "VisaProxyLambda99E10BBC"
+       }
+      ]
+     ]
+    },
+    "RetentionInDays": 731
+   },
+   "UpdateReplacePolicy": "Retain",
+   "DeletionPolicy": "Retain",
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyLambda/LogGroup/Resource"
+   }
+  },
+  "VisaProxyApi365379B3": {
+   "Type": "AWS::ApiGateway::RestApi",
+   "Properties": {
+    "Description": "Proxy for Visa Payment API calls",
+    "Name": "Visa Proxy API"
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Resource"
+   }
+  },
+  "VisaProxyApiDeployment6AEDC63D62abe0790e726c0627d4bc5b601630d2": {
+   "Type": "AWS::ApiGateway::Deployment",
+   "Properties": {
+    "Description": "Proxy for Visa Payment API calls",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "DependsOn": [
+    "VisaProxyApiapiOPTIONSB7F71E75",
+    "VisaProxyApiapi97FB0F4F",
+    "VisaProxyApiapivisaproxyANYE8E28AA5",
+    "VisaProxyApiapivisaproxyOPTIONSDEC79EF5",
+    "VisaProxyApiapivisaproxy78A41A2F",
+    "VisaProxyApiapivisaOPTIONSA6436C69",
+    "VisaProxyApiapivisa651832BD",
+    "VisaProxyApiOPTIONS1FB47DFF",
+    "VisaProxyApiDefault4xx78717941",
+    "VisaProxyApiDefault5xx5BD116E3"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Deployment/Resource",
+    "aws:cdk:do-not-refactor": true
+   }
+  },
+  "VisaProxyApiDeploymentStageprod141399A7": {
+   "Type": "AWS::ApiGateway::Stage",
+   "Properties": {
+    "DeploymentId": {
+     "Ref": "VisaProxyApiDeployment6AEDC63D62abe0790e726c0627d4bc5b601630d2"
+    },
+    "MethodSettings": [
+     {
+      "DataTraceEnabled": false,
+      "HttpMethod": "*",
+      "LoggingLevel": "INFO",
+      "MetricsEnabled": true,
+      "ResourcePath": "/*"
+     }
+    ],
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    },
+    "StageName": "prod",
+    "TracingEnabled": true
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/DeploymentStage.prod/Resource"
+   }
+  },
+  "VisaProxyApiOPTIONS1FB47DFF": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Fn::GetAtt": [
+      "VisaProxyApi365379B3",
+      "RootResourceId"
+     ]
+    },
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/OPTIONS/Resource"
+   }
+  },
+  "VisaProxyApiapi97FB0F4F": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Fn::GetAtt": [
+      "VisaProxyApi365379B3",
+      "RootResourceId"
+     ]
+    },
+    "PathPart": "api",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/Resource"
+   }
+  },
+  "VisaProxyApiapiOPTIONSB7F71E75": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "VisaProxyApiapi97FB0F4F"
+    },
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/OPTIONS/Resource"
+   }
+  },
+  "VisaProxyApiapivisa651832BD": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "VisaProxyApiapi97FB0F4F"
+    },
+    "PathPart": "visa",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/Resource"
+   }
+  },
+  "VisaProxyApiapivisaOPTIONSA6436C69": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "VisaProxyApiapivisa651832BD"
+    },
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/OPTIONS/Resource"
+   }
+  },
+  "VisaProxyApiapivisaproxy78A41A2F": {
+   "Type": "AWS::ApiGateway::Resource",
+   "Properties": {
+    "ParentId": {
+     "Ref": "VisaProxyApiapivisa651832BD"
+    },
+    "PathPart": "{proxy+}",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/{proxy+}/Resource"
+   }
+  },
+  "VisaProxyApiapivisaproxyOPTIONSDEC79EF5": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "ApiKeyRequired": false,
+    "AuthorizationType": "NONE",
+    "HttpMethod": "OPTIONS",
+    "Integration": {
+     "IntegrationResponses": [
+      {
+       "ResponseParameters": {
+        "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key'",
+        "method.response.header.Access-Control-Allow-Origin": "'*'",
+        "method.response.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+       },
+       "StatusCode": "204"
+      }
+     ],
+     "RequestTemplates": {
+      "application/json": "{ statusCode: 200 }"
+     },
+     "Type": "MOCK"
+    },
+    "MethodResponses": [
+     {
+      "ResponseParameters": {
+       "method.response.header.Access-Control-Allow-Headers": true,
+       "method.response.header.Access-Control-Allow-Origin": true,
+       "method.response.header.Access-Control-Allow-Methods": true
+      },
+      "StatusCode": "204"
+     }
+    ],
+    "ResourceId": {
+     "Ref": "VisaProxyApiapivisaproxy78A41A2F"
+    },
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/{proxy+}/OPTIONS/Resource"
+   }
+  },
+  "VisaProxyApiapivisaproxyANYApiPermissionVisaLambdaStackshoppingv3VisaProxyApiE9E7C09DANYapivisaproxyE513652E": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "VisaProxyLambda99E10BBC",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:992167236365:",
+       {
+        "Ref": "VisaProxyApi365379B3"
+       },
+       "/",
+       {
+        "Ref": "VisaProxyApiDeploymentStageprod141399A7"
+       },
+       "/*/api/visa/*"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/{proxy+}/ANY/ApiPermission.VisaLambdaStackshoppingv3VisaProxyApiE9E7C09D.ANY..api.visa.{proxy+}"
+   }
+  },
+  "VisaProxyApiapivisaproxyANYApiPermissionTestVisaLambdaStackshoppingv3VisaProxyApiE9E7C09DANYapivisaproxy932972A8": {
+   "Type": "AWS::Lambda::Permission",
+   "Properties": {
+    "Action": "lambda:InvokeFunction",
+    "FunctionName": {
+     "Fn::GetAtt": [
+      "VisaProxyLambda99E10BBC",
+      "Arn"
+     ]
+    },
+    "Principal": "apigateway.amazonaws.com",
+    "SourceArn": {
+     "Fn::Join": [
+      "",
+      [
+       "arn:aws:execute-api:us-east-1:992167236365:",
+       {
+        "Ref": "VisaProxyApi365379B3"
+       },
+       "/test-invoke-stage/*/api/visa/*"
+      ]
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/{proxy+}/ANY/ApiPermission.Test.VisaLambdaStackshoppingv3VisaProxyApiE9E7C09D.ANY..api.visa.{proxy+}"
+   }
+  },
+  "VisaProxyApiapivisaproxyANYE8E28AA5": {
+   "Type": "AWS::ApiGateway::Method",
+   "Properties": {
+    "AuthorizationType": "NONE",
+    "HttpMethod": "ANY",
+    "Integration": {
+     "IntegrationHttpMethod": "POST",
+     "TimeoutInMillis": 29000,
+     "Type": "AWS_PROXY",
+     "Uri": {
+      "Fn::Join": [
+       "",
+       [
+        "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/",
+        {
+         "Fn::GetAtt": [
+          "VisaProxyLambda99E10BBC",
+          "Arn"
+         ]
+        },
+        "/invocations"
+       ]
+      ]
+     }
+    },
+    "ResourceId": {
+     "Ref": "VisaProxyApiapivisaproxy78A41A2F"
+    },
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default/api/visa/{proxy+}/ANY/Resource"
+   }
+  },
+  "VisaProxyApiDefault4xx78717941": {
+   "Type": "AWS::ApiGateway::GatewayResponse",
+   "Properties": {
+    "ResponseParameters": {
+     "gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
+     "gatewayresponse.header.Access-Control-Allow-Headers": "'Content-Type,Authorization'",
+     "gatewayresponse.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+    },
+    "ResponseType": "DEFAULT_4XX",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default4xx/Resource"
+   }
+  },
+  "VisaProxyApiDefault5xx5BD116E3": {
+   "Type": "AWS::ApiGateway::GatewayResponse",
+   "Properties": {
+    "ResponseParameters": {
+     "gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
+     "gatewayresponse.header.Access-Control-Allow-Headers": "'Content-Type,Authorization'",
+     "gatewayresponse.header.Access-Control-Allow-Methods": "'GET,POST,OPTIONS'"
+    },
+    "ResponseType": "DEFAULT_5XX",
+    "RestApiId": {
+     "Ref": "VisaProxyApi365379B3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/VisaProxyApi/Default5xx/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/+1XzW/TMBT/W/AReYENuPTWjW1UDFp1u1UVeotf08ccO9jOSojyvyM7dptSNmkSl6Gdav/e90fec0+yk+MP2dtXsLFHubg7knSbtdcO8jsOG/utlVDeCsjai1rljrRatMzUylGJbMReM87WoIREE2+5FongeXTt4q3EUpvmmn4lMqp7MlqVqBKLQJsbqryVgHS8ZSDE+ZBxEThfs2W35Gcrlbzy5xmakqwlrTpOUGbtXEtctAysrUsUpw0btawypHKqQI7zXNdb0z2PFxjnA/usBAUFipmWlBNaNlq0e1gzNpF3Gb290bNkoufwMpHqHOTriZKkcEsLsTxKDIF613iPhxQkgRvtKQd6DmEhrh049Fm00aWguNfZcfvuG1iLzmZj/8Ptu+y0zu/QnYLFxZJLXdisvdLFpdF1tWiZjMevEFuh15c4Og4VFeBwA03WztG6cUW+efrTVuqw7B6ppG6mAbK+atZBgQMRZyAnVZwruJUo2MiZGrn3qCBVXOE9SjZik68X09B4zlBu93g7b2MFtXRn2tiZwZWkYu0GFkFKvZkaKsjf+x7x0Bd0ay32oE8IAs0edGZQoHIE0rLRCqTFLpaxj55/DBH6YizavyQAKoongw5I7djt8Mu40Ve6oBzkRAy67H/EQ/J2WeDXviFC6hIU8/XPOyVYDub4HK2uTY7hi/AfFu+7oe/qQEoz0bmqp0WAlMPCwKDEetBrtVtrQ7/8EB3eJkk6QUH+pqkwjSeo6DM2c/xRk/Eeh1Z7iD8EuNZijrbSysZpZh242p7txraJ5BkYKNGlzu6WXazOlz0tT1XCX5L1kqyXZD3vZG23fS+wnYyLllVgdtO4AreegXHbpfUINe3HoIjPjP7ZPKQ27u7JgYOR0Hs1HXo7zFl8RbYBfCZFXx5k78EkgGpSnP1b5yB0v08v+6dZcmj3MkuLc+d68mr40IkN9ASBUN8/rHbdrnXCQg1vT79tSRWef1q7qnYdV1pg9t2+uT95nx0fZ29ffbdER/GPSDbvf38Dnal0M8sMAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "VisaLambdaStack-shopping-v3/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "VisaProxyApiEndpoint265083C3": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "VisaProxyApi365379B3"
+      },
+      ".execute-api.us-east-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "VisaProxyApiDeploymentStageprod141399A7"
+      },
+      "/"
+     ]
+    ]
+   }
+  },
+  "VisaProxyApiUrl": {
+   "Description": "Visa Proxy API Gateway URL (use this in frontend VITE_VISA_PROXY_URL)",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "https://",
+      {
+       "Ref": "VisaProxyApi365379B3"
+      },
+      ".execute-api.us-east-1.",
+      {
+       "Ref": "AWS::URLSuffix"
+      },
+      "/",
+      {
+       "Ref": "VisaProxyApiDeploymentStageprod141399A7"
+      },
+      "/"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": "VisaProxyApiUrl-shopping-v3"
+   }
+  },
+  "VisaLambdaFunctionName": {
+   "Description": "Visa Lambda Function Name",
+   "Value": {
+    "Ref": "VisaProxyLambda99E10BBC"
+   },
+   "Export": {
+    "Name": "VisaLambdaFunctionName-shopping-v3"
+   }
+  },
+  "VisaLambdaArn": {
+   "Description": "Visa Lambda Function ARN",
+   "Value": {
+    "Fn::GetAtt": [
+     "VisaProxyLambda99E10BBC",
+     "Arn"
+    ]
+   },
+   "Export": {
+    "Name": "VisaLambdaArn-shopping-v3"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

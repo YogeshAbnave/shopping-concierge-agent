@@ -1,0 +1,36 @@
+{
+  "version": "48.0.0",
+  "files": {
+    "7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119": {
+      "displayName": "VisaProxyLambda/Code",
+      "source": {
+        "path": "asset.7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "992167236365-us-east-1-712e2d25": {
+          "bucketName": "cdk-hnb659fds-assets-992167236365-us-east-1",
+          "objectKey": "7ca1dc907956be2f74c2dde45e1911a8e140dc320a26179161a9527a6f260119.zip",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::992167236365:role/cdk-hnb659fds-file-publishing-role-992167236365-us-east-1"
+        }
+      }
+    },
+    "afb9bed56620933ec94b6a04cd3116cd82ddf4a32bd1baeea10ee6a62d741b16": {
+      "displayName": "VisaLambdaStack-shopping-v3 Template",
+      "source": {
+        "path": "VisaLambdaStack-shopping-v3.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "992167236365-us-east-1-536eb4c9": {
+          "bucketName": "cdk-hnb659fds-assets-992167236365-us-east-1",
+          "objectKey": "afb9bed56620933ec94b6a04cd3116cd82ddf4a32bd1baeea10ee6a62d741b16.json",
+          "region": "us-east-1",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::992167236365:role/cdk-hnb659fds-file-publishing-role-992167236365-us-east-1"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

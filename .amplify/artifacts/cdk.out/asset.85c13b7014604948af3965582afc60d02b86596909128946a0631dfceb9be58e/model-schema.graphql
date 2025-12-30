@@ -1,0 +1,23 @@
+type Wishlist @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listWishlistByUser_id")
+  asin: String!
+  title: String!
+  price: String!
+  reviews: String
+  url: String
+}
+
+type Bookings @model @auth(rules: [{allow: private}])
+{
+  id: ID! @primaryKey
+  user_id: String! @index(queryField: "listBookingsByUser_id")
+  order_id: String!
+  item_type: String!
+  title: String!
+  price: String!
+  purchase_date: String
+  asin: String
+  url: String
+}

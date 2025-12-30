@@ -1,0 +1,1269 @@
+{
+ "Description": "Concierge Agent with Gateway - Main agent runtime, memory, and gateway with MCP targets (shopping-v3)",
+ "Resources": {
+  "OAuthProviderLambdaRole178E2673": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Execution role for OAuth Provider Custom Resource Lambda",
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "bedrock-agentcore:CreateOAuth2CredentialProvider",
+          "bedrock-agentcore:CreateTokenVault",
+          "bedrock-agentcore:DeleteOAuth2CredentialProvider",
+          "bedrock-agentcore:DeleteTokenVault",
+          "bedrock-agentcore:GetOAuth2CredentialProvider",
+          "bedrock-agentcore:GetTokenVault",
+          "bedrock-agentcore:ListOAuth2CredentialProviders",
+          "cognito-idp:DescribeUserPoolClient",
+          "secretsmanager:CreateSecret",
+          "secretsmanager:DeleteSecret",
+          "secretsmanager:GetSecretValue",
+          "secretsmanager:PutSecretValue"
+         ],
+         "Effect": "Allow",
+         "Resource": "*"
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "OAuthProviderPolicy"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthProviderLambdaRole/Resource"
+   }
+  },
+  "OAuthProviderLambda5411C102": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-998461587244-us-east-1",
+     "S3Key": "b8083d29dda73704c16f5905e13b369e402dde3721c2caa358950e20b92d2b1a.zip"
+    },
+    "Description": "Custom Resource for OAuth2 Credential Provider management",
+    "Handler": "index.handler",
+    "Role": {
+     "Fn::GetAtt": [
+      "OAuthProviderLambdaRole178E2673",
+      "Arn"
+     ]
+    },
+    "Runtime": "python3.13",
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ],
+    "Timeout": 300
+   },
+   "DependsOn": [
+    "OAuthProviderLambdaRole178E2673"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthProviderLambda/Resource",
+    "aws:asset:path": "asset.b8083d29dda73704c16f5905e13b369e402dde3721c2caa358950e20b92d2b1a",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "OAuthProviderframeworkonEventServiceRoleC52D6B54": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthProvider/framework-onEvent/ServiceRole/Resource"
+   }
+  },
+  "OAuthProviderframeworkonEventServiceRoleDefaultPolicy07D767F2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "OAuthProviderLambda5411C102",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "OAuthProviderLambda5411C102",
+             "Arn"
+            ]
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": "lambda:GetFunction",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "OAuthProviderLambda5411C102",
+         "Arn"
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "OAuthProviderframeworkonEventServiceRoleDefaultPolicy07D767F2",
+    "Roles": [
+     {
+      "Ref": "OAuthProviderframeworkonEventServiceRoleC52D6B54"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "OAuthProviderframeworkonEvent93FDB91E": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Code": {
+     "S3Bucket": "cdk-hnb659fds-assets-998461587244-us-east-1",
+     "S3Key": "bdc104ed9cab1b5b6421713c8155f0b753380595356f710400609664d3635eca.zip"
+    },
+    "Description": "AWS CDK resource provider framework - onEvent (AgentStack-shopping-v3/OAuthProvider)",
+    "Environment": {
+     "Variables": {
+      "USER_ON_EVENT_FUNCTION_ARN": {
+       "Fn::GetAtt": [
+        "OAuthProviderLambda5411C102",
+        "Arn"
+       ]
+      }
+     }
+    },
+    "Handler": "framework.onEvent",
+    "LoggingConfig": {
+     "ApplicationLogLevel": "FATAL",
+     "LogFormat": "JSON"
+    },
+    "Role": {
+     "Fn::GetAtt": [
+      "OAuthProviderframeworkonEventServiceRoleC52D6B54",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs22.x",
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ],
+    "Timeout": 900
+   },
+   "DependsOn": [
+    "OAuthProviderframeworkonEventServiceRoleDefaultPolicy07D767F2",
+    "OAuthProviderframeworkonEventServiceRoleC52D6B54"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthProvider/framework-onEvent/Resource",
+    "aws:asset:path": "asset.bdc104ed9cab1b5b6421713c8155f0b753380595356f710400609664d3635eca",
+    "aws:asset:is-bundled": false,
+    "aws:asset:property": "Code"
+   }
+  },
+  "OAuthCredentialProvider": {
+   "Type": "AWS::CloudFormation::CustomResource",
+   "Properties": {
+    "ServiceToken": {
+     "Fn::GetAtt": [
+      "OAuthProviderframeworkonEvent93FDB91E",
+      "Arn"
+     ]
+    },
+    "ProviderName": "oauth_provider_agentstack_shopping_v3",
+    "UserPoolId": {
+     "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+    },
+    "ClientId": {
+     "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-MachineClientId"
+    },
+    "DiscoveryUrl": {
+     "Fn::Join": [
+      "",
+      [
+       "https://cognito-idp.",
+       {
+        "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-Region"
+       },
+       ".amazonaws.com/",
+       {
+        "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+       },
+       "/.well-known/openid-configuration"
+      ]
+     ]
+    },
+    "Version": "2"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/OAuthCredentialProvider/Default"
+   }
+  },
+  "MemoryServiceRoleC95D1642": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "bedrock-agentcore.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Memory/ServiceRole/Resource"
+   }
+  },
+  "Memory3232ACAB": {
+   "Type": "AWS::BedrockAgentCore::Memory",
+   "Properties": {
+    "Description": "Short-term memory for Concierge Agent",
+    "EventExpiryDuration": 90,
+    "MemoryExecutionRoleArn": {
+     "Fn::GetAtt": [
+      "MemoryServiceRoleC95D1642",
+      "Arn"
+     ]
+    },
+    "Name": "memory_agentstack_shopping_v3",
+    "Tags": {
+     "DeploymentId": "shopping-v3",
+     "DeploymentName": "shopping-v3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Memory/Memory"
+   }
+  },
+  "AgentRoleF4A42D6B": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "bedrock-agentcore.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Execution role for Concierge Agent",
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/AgentRole/Resource"
+   }
+  },
+  "AgentRoleDefaultPolicy1027F5D2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "dynamodb:BatchWriteItem",
+        "dynamodb:DeleteItem",
+        "dynamodb:GetItem",
+        "dynamodb:PutItem",
+        "dynamodb:Query",
+        "dynamodb:Scan",
+        "dynamodb:UpdateItem"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-FeedbackTableName"
+           },
+           "/index/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-FeedbackTableName"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-UserProfileTableName"
+           },
+           "/index/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-UserProfileTableName"
+           }
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-WishlistTableName"
+           },
+           "/index/*"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:aws:dynamodb:us-east-1:998461587244:table/",
+           {
+            "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-WishlistTableName"
+           }
+          ]
+         ]
+        }
+       ]
+      },
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:FilterLogEvents",
+        "logs:GetLogEvents",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": "arn:aws:logs:us-east-1:998461587244:log-group:*"
+      },
+      {
+       "Action": [
+        "bedrock-agentcore:CreateEvent",
+        "bedrock-agentcore:GetEvent",
+        "bedrock-agentcore:GetMemory",
+        "bedrock-agentcore:ListEvents",
+        "bedrock-agentcore:ListMemories",
+        "bedrock-agentcore:RetrieveMemoryRecords"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "Memory3232ACAB",
+         "MemoryArn"
+        ]
+       }
+      },
+      {
+       "Action": [
+        "bedrock:InvokeModel",
+        "bedrock:InvokeModelWithResponseStream"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        "arn:aws:bedrock:*:998461587244:inference-profile/*",
+        "arn:aws:bedrock:*::foundation-model/*"
+       ]
+      },
+      {
+       "Action": [
+        "bedrock-agentcore:InvokeGateway",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:GetAuthorizationToken",
+        "ecr:GetDownloadUrlForLayer"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      },
+      {
+       "Action": [
+        "cognito-idp:DescribeUserPool",
+        "cognito-idp:DescribeUserPoolClient"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:aws:cognito-idp:us-east-1:998461587244:userpool/",
+          {
+           "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "logs:CreateLogGroup",
+        "logs:DescribeLogStreams"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":logs:us-east-1:998461587244:log-group:/aws/bedrock-agentcore/runtimes/*"
+         ]
+        ]
+       },
+       "Sid": "LogGroupAccess"
+      },
+      {
+       "Action": "logs:DescribeLogGroups",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":logs:us-east-1:998461587244:log-group:*"
+         ]
+        ]
+       },
+       "Sid": "DescribeLogGroups"
+      },
+      {
+       "Action": [
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":logs:us-east-1:998461587244:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*"
+         ]
+        ]
+       },
+       "Sid": "LogStreamAccess"
+      },
+      {
+       "Action": [
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets",
+        "xray:PutTelemetryRecords",
+        "xray:PutTraceSegments"
+       ],
+       "Effect": "Allow",
+       "Resource": "*",
+       "Sid": "XRayAccess"
+      },
+      {
+       "Action": "cloudwatch:PutMetricData",
+       "Condition": {
+        "StringEquals": {
+         "cloudwatch:namespace": "bedrock-agentcore"
+        }
+       },
+       "Effect": "Allow",
+       "Resource": "*",
+       "Sid": "CloudWatchMetrics"
+      },
+      {
+       "Action": [
+        "bedrock-agentcore:GetWorkloadAccessToken",
+        "bedrock-agentcore:GetWorkloadAccessTokenForJWT",
+        "bedrock-agentcore:GetWorkloadAccessTokenForUserId"
+       ],
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":bedrock-agentcore:us-east-1:998461587244:workload-identity-directory/default"
+          ]
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           "arn:",
+           {
+            "Ref": "AWS::Partition"
+           },
+           ":bedrock-agentcore:us-east-1:998461587244:workload-identity-directory/default/workload-identity/*"
+          ]
+         ]
+        }
+       ],
+       "Sid": "GetAgentAccessToken"
+      },
+      {
+       "Action": "ssm:GetParameter",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":ssm:us-east-1:998461587244:parameter",
+          {
+           "Ref": "GatewayUrlParameter3DD1F504"
+          }
+         ]
+        ]
+       }
+      },
+      {
+       "Action": [
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:BatchGetImage",
+        "ecr:GetDownloadUrlForLayer"
+       ],
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          "arn:",
+          {
+           "Ref": "AWS::Partition"
+          },
+          ":ecr:us-east-1:998461587244:repository/cdk-hnb659fds-container-assets-998461587244-us-east-1"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "AgentRoleDefaultPolicy1027F5D2",
+    "Roles": [
+     {
+      "Ref": "AgentRoleF4A42D6B"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/AgentRole/DefaultPolicy/Resource"
+   }
+  },
+  "Runtime99E3DDFA": {
+   "Type": "AWS::BedrockAgentCore::Runtime",
+   "Properties": {
+    "AgentRuntimeArtifact": {
+     "ContainerConfiguration": {
+      "ContainerUri": {
+       "Fn::Sub": "998461587244.dkr.ecr.us-east-1.${AWS::URLSuffix}/cdk-hnb659fds-container-assets-998461587244-us-east-1:152e084fa2d1cc8730b55a863e05fbc56dfe6de4e22c4464392097da9385d955"
+      }
+     }
+    },
+    "AgentRuntimeName": "agent_agentstack_shopping_v3",
+    "AuthorizerConfiguration": {
+     "CustomJWTAuthorizer": {
+      "AllowedClients": [
+       {
+        "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-ClientId"
+       }
+      ],
+      "DiscoveryUrl": {
+       "Fn::Join": [
+        "",
+        [
+         "https://cognito-idp.",
+         {
+          "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-Region"
+         },
+         ".amazonaws.com/",
+         {
+          "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+         },
+         "/.well-known/openid-configuration"
+        ]
+       ]
+      }
+     }
+    },
+    "Description": "Concierge Agent Runtime",
+    "EnvironmentVariables": {
+     "MEMORY_ID": {
+      "Fn::GetAtt": [
+       "Memory3232ACAB",
+       "MemoryId"
+      ]
+     },
+     "USER_PROFILE_TABLE_NAME": {
+      "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-UserProfileTableName"
+     },
+     "WISHLIST_TABLE_NAME": {
+      "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-WishlistTableName"
+     },
+     "FEEDBACK_TABLE_NAME": {
+      "Fn::ImportValue": "ConciergeAgent-shopping-v3-Data-FeedbackTableName"
+     },
+     "DEPLOYMENT_ID": "shopping-v3",
+     "GATEWAY_CLIENT_ID": {
+      "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-MachineClientId"
+     },
+     "GATEWAY_USER_POOL_ID": {
+      "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+     },
+     "GATEWAY_SCOPE": "concierge-gateway/invoke"
+    },
+    "NetworkConfiguration": {
+     "NetworkMode": "PUBLIC"
+    },
+    "ProtocolConfiguration": "HTTP",
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "AgentRoleF4A42D6B",
+      "Arn"
+     ]
+    },
+    "Tags": {
+     "DeploymentId": "shopping-v3",
+     "DeploymentName": "shopping-v3"
+    }
+   },
+   "DependsOn": [
+    "AgentRoleDefaultPolicy1027F5D2",
+    "AgentRoleF4A42D6B"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Runtime/Resource"
+   }
+  },
+  "GatewayGatewayRole270B0532": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "bedrock-agentcore.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Execution role for AgentCore Gateway",
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "bedrock-agentcore:InvokeRuntime",
+          "bedrock-agentcore:InvokeRuntimeWithResponseStream"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::ImportValue": "CartStack-shopping-v3-RuntimeArn"
+          },
+          {
+           "Fn::ImportValue": "ShoppingStack-shopping-v3-RuntimeArn"
+          }
+         ],
+         "Sid": "BedrockAgentCoreAccess"
+        },
+        {
+         "Action": "lambda:InvokeFunction",
+         "Effect": "Allow",
+         "Resource": "arn:aws:lambda:us-east-1:998461587244:function:*",
+         "Sid": "LambdaInvokeAccess"
+        },
+        {
+         "Action": [
+          "bedrock:InvokeModel",
+          "bedrock:InvokeModelWithResponseStream"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          "arn:aws:bedrock:*:998461587244:inference-profile/*",
+          "arn:aws:bedrock:*::foundation-model/*"
+         ],
+         "Sid": "BedrockModelAccess"
+        },
+        {
+         "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+         ],
+         "Effect": "Allow",
+         "Resource": "arn:aws:logs:us-east-1:998461587244:log-group:/aws/bedrock-agentcore/*",
+         "Sid": "CloudWatchLogsAccess"
+        },
+        {
+         "Action": [
+          "bedrock-agentcore:GetOAuth2CredentialProvider",
+          "bedrock-agentcore:GetResourceOauth2Token",
+          "bedrock-agentcore:GetTokenVault",
+          "bedrock-agentcore:GetWorkloadAccessToken",
+          "secretsmanager:GetSecretValue"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          "arn:aws:bedrock-agentcore:us-east-1:998461587244:token-vault/*",
+          "arn:aws:bedrock-agentcore:us-east-1:998461587244:workload-identity-directory/*",
+          "arn:aws:secretsmanager:us-east-1:998461587244:secret:*",
+          {
+           "Fn::GetAtt": [
+            "OAuthCredentialProvider",
+            "ProviderArn"
+           ]
+          }
+         ],
+         "Sid": "OAuthProviderAccess"
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "GatewayPolicy"
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "DeploymentId",
+      "Value": "shopping-v3"
+     },
+     {
+      "Key": "DeploymentName",
+      "Value": "shopping-v3"
+     }
+    ]
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Gateway/GatewayRole/Resource"
+   }
+  },
+  "GatewayBCF9E5FF": {
+   "Type": "AWS::BedrockAgentCore::Gateway",
+   "Properties": {
+    "AuthorizerConfiguration": {
+     "CustomJWTAuthorizer": {
+      "AllowedClients": [
+       {
+        "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-MachineClientId"
+       }
+      ],
+      "DiscoveryUrl": {
+       "Fn::Join": [
+        "",
+        [
+         "https://cognito-idp.",
+         {
+          "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-Region"
+         },
+         ".amazonaws.com/",
+         {
+          "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-UserPoolId"
+         },
+         "/.well-known/openid-configuration"
+        ]
+       ]
+      }
+     }
+    },
+    "AuthorizerType": "CUSTOM_JWT",
+    "Description": "AgentCore Gateway with MCP protocol, JWT inbound auth, and OAuth outbound auth",
+    "Name": "gateway-agentstack-shopping-v3",
+    "ProtocolConfiguration": {
+     "Mcp": {
+      "SupportedVersions": [
+       "2025-03-26"
+      ]
+     }
+    },
+    "ProtocolType": "MCP",
+    "RoleArn": {
+     "Fn::GetAtt": [
+      "GatewayGatewayRole270B0532",
+      "Arn"
+     ]
+    },
+    "Tags": {
+     "DeploymentId": "shopping-v3",
+     "DeploymentName": "shopping-v3"
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Gateway/Gateway"
+   }
+  },
+  "GatewayMcpTarget0FE60EA98": {
+   "Type": "AWS::BedrockAgentCore::GatewayTarget",
+   "Properties": {
+    "CredentialProviderConfigurations": [
+     {
+      "CredentialProvider": {
+       "OauthCredentialProvider": {
+        "ProviderArn": {
+         "Fn::GetAtt": [
+          "OAuthCredentialProvider",
+          "ProviderArn"
+         ]
+        },
+        "Scopes": [
+         "concierge-gateway/invoke"
+        ]
+       }
+      },
+      "CredentialProviderType": "OAUTH"
+     }
+    ],
+    "Description": "MCP Server: CartTools",
+    "GatewayIdentifier": {
+     "Fn::GetAtt": [
+      "GatewayBCF9E5FF",
+      "GatewayIdentifier"
+     ]
+    },
+    "Name": "carttools",
+    "TargetConfiguration": {
+     "Mcp": {
+      "McpServer": {
+       "Endpoint": {
+        "Fn::Join": [
+         "",
+         [
+          "https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/",
+          {
+           "Fn::Join": [
+            "%2F",
+            {
+             "Fn::Split": [
+              "/",
+              {
+               "Fn::Join": [
+                "%3A",
+                {
+                 "Fn::Split": [
+                  ":",
+                  {
+                   "Fn::ImportValue": "CartStack-shopping-v3-RuntimeArn"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          "/invocations"
+         ]
+        ]
+       }
+      }
+     }
+    }
+   },
+   "DependsOn": [
+    "GatewayBCF9E5FF"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Gateway/McpTarget0"
+   }
+  },
+  "GatewayMcpTarget1F30D4F2F": {
+   "Type": "AWS::BedrockAgentCore::GatewayTarget",
+   "Properties": {
+    "CredentialProviderConfigurations": [
+     {
+      "CredentialProvider": {
+       "OauthCredentialProvider": {
+        "ProviderArn": {
+         "Fn::GetAtt": [
+          "OAuthCredentialProvider",
+          "ProviderArn"
+         ]
+        },
+        "Scopes": [
+         "concierge-gateway/invoke"
+        ]
+       }
+      },
+      "CredentialProviderType": "OAUTH"
+     }
+    ],
+    "Description": "MCP Server: ShoppingTools",
+    "GatewayIdentifier": {
+     "Fn::GetAtt": [
+      "GatewayBCF9E5FF",
+      "GatewayIdentifier"
+     ]
+    },
+    "Name": "shoppingtools",
+    "TargetConfiguration": {
+     "Mcp": {
+      "McpServer": {
+       "Endpoint": {
+        "Fn::Join": [
+         "",
+         [
+          "https://bedrock-agentcore.us-east-1.amazonaws.com/runtimes/",
+          {
+           "Fn::Join": [
+            "%2F",
+            {
+             "Fn::Split": [
+              "/",
+              {
+               "Fn::Join": [
+                "%3A",
+                {
+                 "Fn::Split": [
+                  ":",
+                  {
+                   "Fn::ImportValue": "ShoppingStack-shopping-v3-RuntimeArn"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          "/invocations"
+         ]
+        ]
+       }
+      }
+     }
+    }
+   },
+   "DependsOn": [
+    "GatewayBCF9E5FF"
+   ],
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/Gateway/McpTarget1"
+   }
+  },
+  "GatewayUrlParameter3DD1F504": {
+   "Type": "AWS::SSM::Parameter",
+   "Properties": {
+    "Description": "AgentCore Gateway URL for supervisor agent",
+    "Name": "/concierge-agent/shopping-v3/gateway-url",
+    "Tags": {
+     "DeploymentId": "shopping-v3",
+     "DeploymentName": "shopping-v3"
+    },
+    "Tier": "Standard",
+    "Type": "String",
+    "Value": {
+     "Fn::GetAtt": [
+      "GatewayBCF9E5FF",
+      "GatewayUrl"
+     ]
+    }
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/GatewayUrlParameter/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01Q0W7CMAz8Ft5TU8r2voG0PU2rYO/IpKaENgmKExCK8u9TSkA83Vln6+7cQNO8Q6xneOVKdkM1qj3ErUc5iA2xDU6SwCvvokINcWNHEuuDmbC1o5K3PN5ZEiPqfYcQv4KRXlmTtQdPgpc7ZCbP8JlB8BJWQQ7kV8gk9tQ5KwfsyXhpHUFcH8wPaesmi00wXunJ/Bs9XfH2Qv/Q9eSTYNY5vFOmb9GhJk9uyvcYUhKT99Zjr0wvZGBv9c6VpgytsxfV5atJeb4gJ3jhv8Gfg0+irnA8HxHq2Ud54Dxj6VI9y5S1WPqUMikJYzuCE88vzRssFlDPTqxU5e46lL1/W81ODaUBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "AgentStack-shopping-v3/CDKMetadata/Default"
+   }
+  }
+ },
+ "Outputs": {
+  "MainRuntimeArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Runtime99E3DDFA",
+     "AgentRuntimeArn"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-MainRuntimeArn"
+   }
+  },
+  "MainRuntimeId": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Runtime99E3DDFA",
+     "AgentRuntimeId"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-MainRuntimeId"
+   }
+  },
+  "MemoryId": {
+   "Value": {
+    "Fn::GetAtt": [
+     "Memory3232ACAB",
+     "MemoryId"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-MemoryId"
+   }
+  },
+  "GatewayUrl": {
+   "Description": "Gateway URL for MCP client connections (IAM auth)",
+   "Value": {
+    "Fn::GetAtt": [
+     "GatewayBCF9E5FF",
+     "GatewayUrl"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-GatewayUrl"
+   }
+  },
+  "GatewayId": {
+   "Description": "Gateway ID",
+   "Value": {
+    "Fn::GetAtt": [
+     "GatewayBCF9E5FF",
+     "GatewayIdentifier"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-GatewayId"
+   }
+  },
+  "GatewayArn": {
+   "Description": "Gateway ARN",
+   "Value": {
+    "Fn::GetAtt": [
+     "GatewayBCF9E5FF",
+     "GatewayArn"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-GatewayArn"
+   }
+  },
+  "GatewayTargetCount": {
+   "Description": "Number of gateway targets configured",
+   "Value": "2"
+  },
+  "MachineClientId": {
+   "Description": "Machine client ID for gateway OAuth and MCP authentication (imported from Amplify)",
+   "Value": {
+    "Fn::ImportValue": "ConciergeAgent-shopping-v3-Auth-MachineClientId"
+   }
+  },
+  "OAuthProviderArn": {
+   "Description": "OAuth provider ARN for gateway targets",
+   "Value": {
+    "Fn::GetAtt": [
+     "OAuthCredentialProvider",
+     "ProviderArn"
+    ]
+   },
+   "Export": {
+    "Name": "AgentStack-shopping-v3-OAuthProviderArn"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

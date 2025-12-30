@@ -1,0 +1,2442 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef": {
+   "Type": "String"
+  },
+  "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "BookingsTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceD19233A5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataAmplifyT775755D9"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "Bookings-",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     },
+     {
+      "attributeName": "user_id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "globalSecondaryIndexes": [
+     {
+      "indexName": "bookingsByUser_id",
+      "keySchema": [
+       {
+        "attributeName": "user_id",
+        "keyType": "HASH"
+       }
+      ],
+      "projection": {
+       "projectionType": "ALL"
+      },
+      "provisionedThroughput": {
+       "Fn::If": [
+        "ShouldUsePayPerRequestBilling",
+        {
+         "Ref": "AWS::NoValue"
+        },
+        {
+         "ReadCapacityUnits": {
+          "Ref": "DynamoDBModelTableReadIOPS"
+         },
+         "WriteCapacityUnits": {
+          "Ref": "DynamoDBModelTableWriteIOPS"
+         }
+        }
+       ]
+      }
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsTable/Default/Default"
+   }
+  },
+  "BookingsIAMRole2410A2F9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Bookings-",
+                {
+                 "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Bookings-",
+                {
+                 "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "BookingsIAMRole10a790-",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsIAMRole/Resource"
+   }
+  },
+  "BookingsDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "BookingsTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "BookingsTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "BookingsIAMRole2410A2F9",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "BookingsIAMRole2410A2F9"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/BookingsDataSource/Resource"
+   }
+  },
+  "QuerygetBookingspreAuth0FunctionQuerygetBookingspreAuth0FunctionAppSyncFunctionE75D613B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetBookingspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ffc597e18023b530e6afcbe02cee647d49550fa9e77bd06f1dee09d8b1be8de3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingspreAuth0Function/QuerygetBookingspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetBookingsauth0FunctionQuerygetBookingsauth0FunctionAppSyncFunction1EF9FDF9": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingsauth0Function/QuerygetBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetBookingspostAuth0FunctionQuerygetBookingspostAuth0FunctionAppSyncFunction9A87CF0C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerygetBookingspostAuth0Function/QuerygetBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetBookingsDataResolverFnQueryGetBookingsDataResolverFnAppSyncFunctionA0FA0A3A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryGetBookingsDataResolverFn/QueryGetBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "getBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetBookingspreAuth0FunctionQuerygetBookingspreAuth0FunctionAppSyncFunctionE75D613B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetBookingsauth0FunctionQuerygetBookingsauth0FunctionAppSyncFunction1EF9FDF9",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetBookingspostAuth0FunctionQuerygetBookingspostAuth0FunctionAppSyncFunction9A87CF0C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetBookingsDataResolverFnQueryGetBookingsDataResolverFnAppSyncFunctionA0FA0A3A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryGetBookingsResolver"
+   }
+  },
+  "QuerylistBookingspreAuth0FunctionQuerylistBookingspreAuth0FunctionAppSyncFunction4FF4F0FB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBookingspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3e81312d4c75951808eda9fcd5f854c1925c0b819de0939f09c4fe2eebb190b8.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingspreAuth0Function/QuerylistBookingspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistBookingsauth0FunctionQuerylistBookingsauth0FunctionAppSyncFunctionCAE35A04": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsauth0Function/QuerylistBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistBookingspostAuth0FunctionQuerylistBookingspostAuth0FunctionAppSyncFunction27C1B5B3": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingspostAuth0Function/QuerylistBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListBookingsDataResolverFnQueryListBookingsDataResolverFnAppSyncFunctionA277640B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryListBookingsDataResolverFn/QueryListBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "listBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistBookingspreAuth0FunctionQuerylistBookingspreAuth0FunctionAppSyncFunction4FF4F0FB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistBookingsauth0FunctionQuerylistBookingsauth0FunctionAppSyncFunctionCAE35A04",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistBookingspostAuth0FunctionQuerylistBookingspostAuth0FunctionAppSyncFunction27C1B5B3",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListBookingsDataResolverFnQueryListBookingsDataResolverFnAppSyncFunctionA277640B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryListBookingsResolver"
+   }
+  },
+  "MutationcreateBookingsinit0FunctionMutationcreateBookingsinit0FunctionAppSyncFunction9CBF0938": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBookingsinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingsinit0Function/MutationcreateBookingsinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBookingspreAuth0FunctionMutationcreateBookingspreAuth0FunctionAppSyncFunctionA971A6DA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBookingspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingspreAuth0Function/MutationcreateBookingspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBookingsauth0FunctionMutationcreateBookingsauth0FunctionAppSyncFunction05129788": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/b371d68ddfbdd11b176756ce33b2c4e79d26fcc2fd4b7c0c9e75d06efacee90e.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingsauth0Function/MutationcreateBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBookingspostAuth0FunctionMutationcreateBookingspostAuth0FunctionAppSyncFunction45A1CC3D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationcreateBookingspostAuth0Function/MutationcreateBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateBookingsDataResolverFnMutationCreateBookingsDataResolverFnAppSyncFunction11749D58": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/935431aac8ed77d7b26da8a55636c7a2b954ea47c944e3e2cdfe1fccc13102c3.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationCreateBookingsDataResolverFn/MutationCreateBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "createBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBookingsinit0FunctionMutationcreateBookingsinit0FunctionAppSyncFunction9CBF0938",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBookingspreAuth0FunctionMutationcreateBookingspreAuth0FunctionAppSyncFunctionA971A6DA",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBookingsauth0FunctionMutationcreateBookingsauth0FunctionAppSyncFunction05129788",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBookingspostAuth0FunctionMutationcreateBookingspostAuth0FunctionAppSyncFunction45A1CC3D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateBookingsDataResolverFnMutationCreateBookingsDataResolverFnAppSyncFunction11749D58",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationCreateBookingsResolver"
+   }
+  },
+  "MutationupdateBookingsinit0FunctionMutationupdateBookingsinit0FunctionAppSyncFunction9DE2A394": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBookingsinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingsinit0Function/MutationupdateBookingsinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateBookingspreAuth0FunctionMutationupdateBookingspreAuth0FunctionAppSyncFunction7542629F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBookingspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/39fb35c6f8e8573ffe3a63ba867cf543b05af129a104b387a44f03c3d85da0c3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingspreAuth0Function/MutationupdateBookingspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateBookingsauth0FunctionMutationupdateBookingsauth0FunctionAppSyncFunction3F0149B8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/245ed8ac5185462a6923b7e45a318fec4c9ba0c45d1d720abd5b20317aa3dc6a.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingsauth0Function/MutationupdateBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateBookingspostAuth0FunctionMutationupdateBookingspostAuth0FunctionAppSyncFunction8B09C94E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationupdateBookingspostAuth0Function/MutationupdateBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateBookingsDataResolverFnMutationUpdateBookingsDataResolverFnAppSyncFunction8D89DB98": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationUpdateBookingsDataResolverFn/MutationUpdateBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "updateBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBookingsinit0FunctionMutationupdateBookingsinit0FunctionAppSyncFunction9DE2A394",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBookingspreAuth0FunctionMutationupdateBookingspreAuth0FunctionAppSyncFunction7542629F",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBookingsauth0FunctionMutationupdateBookingsauth0FunctionAppSyncFunction3F0149B8",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBookingspostAuth0FunctionMutationupdateBookingspostAuth0FunctionAppSyncFunction8B09C94E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateBookingsDataResolverFnMutationUpdateBookingsDataResolverFnAppSyncFunction8D89DB98",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationUpdateBookingsResolver"
+   }
+  },
+  "MutationdeleteBookingspreAuth0FunctionMutationdeleteBookingspreAuth0FunctionAppSyncFunction5A8ACD6D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteBookingspreAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a2c0f8a4d76f659d130c8a445801845ae9d33e5cc2c5ecd610edc272d4bd46e3.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingspreAuth0Function/MutationdeleteBookingspreAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteBookingsauth0FunctionMutationdeleteBookingsauth0FunctionAppSyncFunctionB342C2FB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/29e4bdb03133f87f2b1acb547959ffd4cfd22804026994c5b61db33084127353.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingsauth0Function/MutationdeleteBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteBookingspostAuth0FunctionMutationdeleteBookingspostAuth0FunctionAppSyncFunction697F2756": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationdeleteBookingspostAuth0Function/MutationdeleteBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteBookingsDataResolverFnMutationDeleteBookingsDataResolverFnAppSyncFunction4B7E58DD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/MutationDeleteBookingsDataResolverFn/MutationDeleteBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "deleteBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteBookingspreAuth0FunctionMutationdeleteBookingspreAuth0FunctionAppSyncFunction5A8ACD6D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteBookingsauth0FunctionMutationdeleteBookingsauth0FunctionAppSyncFunctionB342C2FB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteBookingspostAuth0FunctionMutationdeleteBookingspostAuth0FunctionAppSyncFunction697F2756",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteBookingsDataResolverFnMutationDeleteBookingsDataResolverFnAppSyncFunction4B7E58DD",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/mutationDeleteBookingsResolver"
+   }
+  },
+  "SubscriptiononCreateBookingsauth0FunctionSubscriptiononCreateBookingsauth0FunctionAppSyncFunctionDA4B2510": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononCreateBookingsauth0Function/SubscriptiononCreateBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateBookingspostAuth0FunctionSubscriptiononCreateBookingspostAuth0FunctionAppSyncFunction387D9B73": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononCreateBookingspostAuth0Function/SubscriptiononCreateBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateBookingsDataResolverFnSubscriptionOnCreateBookingsDataResolverFnAppSyncFunction021582A5": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnCreateBookingsDataResolverFn/SubscriptionOnCreateBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onCreateBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateBookingsauth0FunctionSubscriptiononCreateBookingsauth0FunctionAppSyncFunctionDA4B2510",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateBookingspostAuth0FunctionSubscriptiononCreateBookingspostAuth0FunctionAppSyncFunction387D9B73",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateBookingsDataResolverFnSubscriptionOnCreateBookingsDataResolverFnAppSyncFunction021582A5",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnCreateBookingsResolver"
+   }
+  },
+  "SubscriptiononUpdateBookingsauth0FunctionSubscriptiononUpdateBookingsauth0FunctionAppSyncFunction2FDBCDAF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononUpdateBookingsauth0Function/SubscriptiononUpdateBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateBookingspostAuth0FunctionSubscriptiononUpdateBookingspostAuth0FunctionAppSyncFunction0FBE8601": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononUpdateBookingspostAuth0Function/SubscriptiononUpdateBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateBookingsDataResolverFnSubscriptionOnUpdateBookingsDataResolverFnAppSyncFunctionCDFA7EAF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnUpdateBookingsDataResolverFn/SubscriptionOnUpdateBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onUpdateBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateBookingsauth0FunctionSubscriptiononUpdateBookingsauth0FunctionAppSyncFunction2FDBCDAF",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateBookingspostAuth0FunctionSubscriptiononUpdateBookingspostAuth0FunctionAppSyncFunction0FBE8601",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateBookingsDataResolverFnSubscriptionOnUpdateBookingsDataResolverFnAppSyncFunctionCDFA7EAF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnUpdateBookingsResolver"
+   }
+  },
+  "SubscriptiononDeleteBookingsauth0FunctionSubscriptiononDeleteBookingsauth0FunctionAppSyncFunction561BFBDC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteBookingsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6f3a2a9d562ae3058cc1aed6741edbf5edcaef7b3df7b03f52478816a1c95ffb.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononDeleteBookingsauth0Function/SubscriptiononDeleteBookingsauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteBookingspostAuth0FunctionSubscriptiononDeleteBookingspostAuth0FunctionAppSyncFunction9432896C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteBookingspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptiononDeleteBookingspostAuth0Function/SubscriptiononDeleteBookingspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteBookingsDataResolverFnSubscriptionOnDeleteBookingsDataResolverFnAppSyncFunctionF6850C8E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteBookingsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/SubscriptionOnDeleteBookingsDataResolverFn/SubscriptionOnDeleteBookingsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteBookingsResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "onDeleteBookings",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteBookingsauth0FunctionSubscriptiononDeleteBookingsauth0FunctionAppSyncFunction561BFBDC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteBookingspostAuth0FunctionSubscriptiononDeleteBookingspostAuth0FunctionAppSyncFunction9432896C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteBookingsDataResolverFnSubscriptionOnDeleteBookingsDataResolverFnAppSyncFunctionF6850C8E",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteBookings\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/subscriptionOnDeleteBookingsResolver"
+   }
+  },
+  "QuerylistBookingsByUseridauth0FunctionQuerylistBookingsByUseridauth0FunctionAppSyncFunctionA00CE02C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBookingsByUser_idauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/88d5b7081b0dc9c39fd0bffedf56f011b2a7cf1ce5cc227f47a1e94efee8067c.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsByUser_idauth0Function/QuerylistBookingsByUser_idauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistBookingsByUseridpostAuth0FunctionQuerylistBookingsByUseridpostAuth0FunctionAppSyncFunction32BF6E9A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPINONEDSB6D5A8D0Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBookingsByUser_idpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QuerylistBookingsByUser_idpostAuth0Function/QuerylistBookingsByUser_idpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListBookingsByUseridDataResolverFnQueryListBookingsByUseridDataResolverFnAppSyncFunction9D56913A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BookingsDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListBookingsByUser_idDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/11479684aee1ad70143d06819239a56096836d01d86da70cb881318412580171.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/098c998f215c333f57348ca8912f66057ae6b574fe34013033dc54362ee2372c.vtl"
+    }
+   },
+   "DependsOn": [
+    "BookingsDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/QueryListBookingsByUser_idDataResolverFn/QueryListBookingsByUser_idDataResolverFn.AppSyncFunction"
+   }
+  },
+  "QuerylistBookingsByUseride1abResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+    },
+    "FieldName": "listBookingsByUser_id",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistBookingsByUseridauth0FunctionQuerylistBookingsByUseridauth0FunctionAppSyncFunctionA00CE02C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistBookingsByUseridpostAuth0FunctionQuerylistBookingsByUseridpostAuth0FunctionAppSyncFunction32BF6E9A",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListBookingsByUseridDataResolverFnQueryListBookingsByUseridDataResolverFnAppSyncFunction9D56913A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listBookingsByUser_id\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BookingsTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthauthenticatedUserRoleBF051DA4Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthunauthenticatedUserRole6C97C79BRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107authNestedStackauthNestedStackResource70FE15F5Outputsamplifysampleconciergeagentshoppingv3sandbox9eab247107authamplifyAuthIdentityPool3EF210CARef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/queryListBookingsByUserid92e9Resolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WOQW6DQAxFz5L9xE2gF2hAXbYVdB+ZGYMmgAeNPYkixN0rSJWqq+8nP9k/gyzP4bDDm+yt6/eDb2D+IFFytaLtTdHyF0YcSSmuUAR2Xn1gU5GEFC2ZIomG8Q9bfs54k/Ps7oxjcA18YzPQCYWMxxHmKgwPOwy0GJwmubOFudz0silRsX6e/E/vie1aogjc+i5F3Br9fh6uFBcj+RlFSAXe1jCSwynZnnQtsKzuZ9IpqdnWtWLnuVsMB0dwkZdr9grHIxx2F/F+HxOrHwmqR/4ASzm85TYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-sampleconciergeagent-shoppingv3-sandbox-9eab247107/data/amplifyData/Bookings/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttBookingsTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "BookingsTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "GetAtt:BookingsTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttBookingsTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "Bookings-",
+      {
+       "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataGraphQLAPI5AA025AEApiId"
+       },
+       "GetAtt:BookingsTable:Name"
+      ]
+     ]
+    }
+   }
+  },
+  "amplifysampleconciergeagentshoppingv3sandbox9eab247107dataamplifyDataBookingsBookingsTable3EB3A6F5TableArn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "BookingsTable",
+     "TableArn"
+    ]
+   }
+  }
+ }
+}
